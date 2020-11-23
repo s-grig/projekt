@@ -3,23 +3,23 @@ version: 1.0.{build}
 image: Visual Studio 2017  
   
 build_script:  
-  - cd hello_world_application  
+ # - cd hello_world_application  
   - cmake -H. -B_build  
   - cmake --build _build  
-  - cmake --build _build --target hello_world   
-  - _build\Debug\hello_world.exe  
+  - cmake --build _build --target kp   
+  - _build\Debug\kp.exe  
   - echo "Testing hello_world is done"  
-  - cd ..  
-  - cd solver_application  
-  - cmake -H. -B_build  
-  - cmake --build _build  
-  - cmake --build _build --target solver  
-  - echo "Testing solver is done"  
+ # - cd ..  
+ # - cd solver_application  
+ # - cmake -H. -B_build  
+ # - cmake --build _build  
+ # - cmake --build _build --target solver  
+ # - echo "Testing solver is done"  
 notifications:   
 - provider: Email   
   to:   
-  - antongr2001@gmail.com  
-subject: homework04 (appveyor) 
+  - 7986291@gmail.com  
+subject: kp (appveyor) 
 message: Ок! Build success! - ci.appveyor.com   
 on_build_success: true  
 on_build_failure: false     
