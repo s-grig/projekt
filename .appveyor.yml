@@ -1,0 +1,26 @@
+version: 1.0.{build}  
+
+image: Visual Studio 2017  
+  
+build_script:  
+  - cd hello_world_application  
+  - cmake -H. -B_build  
+  - cmake --build _build  
+  - cmake --build _build --target hello_world   
+  - _build\Debug\hello_world.exe  
+  - echo "Testing hello_world is done"  
+  - cd ..  
+  - cd solver_application  
+  - cmake -H. -B_build  
+  - cmake --build _build  
+  - cmake --build _build --target solver  
+  - echo "Testing solver is done"  
+notifications:   
+- provider: Email   
+  to:   
+  - antongr2001@gmail.com  
+subject: homework04 (appveyor) 
+message: Ок! Build success! - ci.appveyor.com   
+on_build_success: true  
+on_build_failure: false     
+on_build_status_changed: false   
