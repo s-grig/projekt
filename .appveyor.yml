@@ -9,7 +9,7 @@ install:
  #- cd %APPVEYOR_BUILD_FOLDER%
  - cd c:\tools\vcpkg
  - .\vcpkg update
- - vcpkg install sfml:x64-windows
+ #- vcpkg install sfml:x64-windows
  - vcpkg install sfml:x86-windows
  - vcpkg integrate install  
  - cd ..  
