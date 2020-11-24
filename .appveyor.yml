@@ -15,7 +15,7 @@ build_script:
  # - cmake --build _build  
  # - cmake --build _build --target solver  
  # - echo "Testing solver is done"  
-notifications:   
+#notifications:   
 #- provider: Email   
 # to:   
 #  - 7986291@gmail.com  
