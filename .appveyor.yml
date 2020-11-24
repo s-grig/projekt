@@ -1,6 +1,6 @@
 version: 1.0.{build}  
 
-image: Visual Studio 2017  
+image: Visual Studio 2019  
 
 install:
  - cd C:\Tools\vcpkg
@@ -11,13 +11,12 @@ install:
  - vcpkg integrate install
  #- .\vcpkg update
  #- vcpkg install sfml
- - vcpkg install libflac:x64-windows
+ #- vcpkg install libflac:x64-windows
  - vcpkg install sfml:x64-windows
  #- vcpkg install sfml:x86-windows  
- #- cd ..  
-  
+ - cd C:\projects\projekt
 build_script:  
-  - cd C:\projects\projekt  
+  -   
   - cmake -H. -B_build  
   - cmake --build _build  
   - cmake --build _build --target kp   
