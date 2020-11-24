@@ -18,15 +18,15 @@ install:
  #- .\vcpkg update
  # vcpkg install sfml
  #- vcpkg install libflac:x64-windows
- - vcpkg install sfml:x64-windows
+ #- vcpkg install sfml:x64-windows
  #- vcpkg install tesseract
  #- vcpkg install sfml:x86-windows  
  # cd C:\projects\projekt
 build_script:  
 # скрипт сборки проекта:
     - cd C:\projects\projekt
-    - mkdir build
-    - cd build
+    #- mkdir build
+    #- cd build
     - cmake -H. -B_build  
     - cmake --build _build  
     - cmake --build _build --target main   
