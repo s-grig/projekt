@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #include("tools/gate/cmake/HunterGate.cmake")
-include(CPackConfig.cmake)
+#include(CPackConfig.cmake)
 
 #HunterGate(
 #  URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
