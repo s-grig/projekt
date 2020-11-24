@@ -8,6 +8,7 @@ configuration: Release
 
 cache:
   - c:\Tools\vcpkg\installed
+  #cache: c:\tools\vcpkg\installed\
 
 init:
   - set TARGET_PLATFORM=
@@ -29,7 +30,9 @@ install:
 
   - cd C:\Tools\vcpkg
   - vcpkg install sfml:x64-windows
-  - vcpkg install tesseract
+  - vcpkg install sfml:x86-windows
+  - vcpkg install tesseract:x64-windows
+  - vcpkg install tesseract:x86-windows
   - vcpkg integrate install
   - vcpkg list
 # - git pull
