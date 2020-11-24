@@ -31,6 +31,7 @@ install:
   - vcpkg install sfml:x64-windows
   - vcpkg install tesseract
   - vcpkg integrate install
+  - vcpkg list
 # - git pull
 # - .\bootstrap-vcpkg.bat
 #- cd %APPVEYOR_BUILD_FOLDER%
@@ -40,7 +41,7 @@ install:
  # vcpkg install sfml
  #- vcpkg install libflac:x64-windows
  #- vcpkg install sfml:x64-windows
- #- vcpkg install tesseract
+ #- vcpkg install tesseract:x64-windows
  #- vcpkg install sfml:x86-windows  
  # cd C:\projects\projekt
 #build_script:  
