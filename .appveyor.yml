@@ -10,18 +10,19 @@ install:
  - cd c:\tools\vcpkg
  - vcpkg integrate install
  #- .\vcpkg update
- #- vcpkg install sfml
+ - vcpkg install sfml
  #- vcpkg install libflac:x64-windows
  - vcpkg install sfml:x64-windows
+ - vcpkg install tesseract
  #- vcpkg install sfml:x86-windows  
  - cd C:\projects\projekt
 build_script:  
-  -   
+  - cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...  
   - cmake -H. -B_build  
   - cmake --build _build  
-  - cmake --build _build --target kp   
-  - _build\Debug\kp.exe  
-  - echo "Testing hello_world is done"  
+  - cmake --build _build --target main   
+  - _build\Debug\main.exe  
+  - echo "Testing main is done"  
 
  # - cd solver_application  
  # - cmake -H. -B_build  
