@@ -24,6 +24,7 @@ install:
  # cd C:\projects\projekt
 build_script:  
 # скрипт сборки проекта:
+    - cd C:\projects\projekt
     - mkdir build
     - cd build
     - cmake -H. -B_build  
