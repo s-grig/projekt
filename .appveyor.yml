@@ -29,6 +29,7 @@ install:
 
   - cd C:\Tools\vcpkg
   - vcpkg install sfml:x64-windows
+  - vcpkg install tesseract
   - vcpkg integrate install
 # - git pull
 # - .\bootstrap-vcpkg.bat
