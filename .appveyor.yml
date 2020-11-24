@@ -15,12 +15,12 @@ build_script:
  # - cmake --build _build  
  # - cmake --build _build --target solver  
  # - echo "Testing solver is done"  
-notifications:   
-- provider: Email   
-  to:   
-  - 7986291@gmail.com  
-subject: kp (appveyor) 
-message: Ок! Build success! - ci.appveyor.com   
-on_build_success: true  
-on_build_failure: false     
-on_build_status_changed: false   
+#notifications:   
+#- provider: Email   
+# to:   
+#  - 7986291@gmail.com  
+#subject: kp (appveyor) 
+#message: Ок! Build success! - ci.appveyor.com   
+#on_build_success: true  
+#on_build_failure: false     
+#on_build_status_changed: false   
