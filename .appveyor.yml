@@ -8,10 +8,11 @@ install:
  #- .\bootstrap-vcpkg.bat
  #- cd %APPVEYOR_BUILD_FOLDER%
  - cd c:\tools\vcpkg
- - .\vcpkg update
- #- vcpkg install sfml:x64-windows
- - vcpkg install sfml:x86-windows
- - vcpkg integrate install  
+ - vcpkg integrate install
+ #- .\vcpkg update
+ - vcpkg install sfml
+ - vcpkg install sfml:x64-windows
+ - vcpkg install sfml:x86-windows  
  - cd ..  
   
 build_script:  

@@ -19,9 +19,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #  URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
 #  SHA1 "e14bc153a7f16d6a5eeec845fb0283c8fad8c358"  
 #)
-
-project(kp)
+# APPVEYOR
 #cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...
+project(kp)
+
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
 
 find_package(Tesseract CONFIG REQUIRED)
