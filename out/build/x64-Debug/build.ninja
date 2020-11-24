@@ -134,11 +134,6 @@ build main: phony main.exe
 build all: phony main.exe
 
 # =============================================================================
-# Unknown Build Time Dependencies.
-# Tell Ninja that they may appear as side effects of build rules
-# otherwise ordered by order-only dependencies.
-
-# =============================================================================
 # Built-in targets
 
 

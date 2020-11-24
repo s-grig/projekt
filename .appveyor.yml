@@ -3,13 +3,13 @@ version: 1.0.{build}
 image: Visual Studio 2017  
 
 install:
- #- cd C:\Tools\vcpkg
- #- git pull
- #- .\bootstrap-vcpkg.bat
- #- cd %APPVEYOR_BUILD_FOLDER%
+ - cd C:\Tools\vcpkg
+ - git pull
+ - .\bootstrap-vcpkg.bat
+ - cd %APPVEYOR_BUILD_FOLDER%
  - cd c:\tools\vcpkg
  - vcpkg integrate install
- - .\vcpkg update
+ #- .\vcpkg update
  #- vcpkg install sfml
  - vcpkg install libflac:x64-windows
  - vcpkg install sfml:x64-windows
