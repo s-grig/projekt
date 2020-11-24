@@ -9,6 +9,11 @@ build_script:
   - cmake --build _build --target kp   
   - _build\Debug\kp.exe  
   - echo "Testing hello_world is done"  
+install:
+ - cd c:\tools\vcpkg
+ - vcpkg install sfml:x64-windows
+ - vcpkg install sfml:x86-windows
+ - vcpkg integrate install  
  # - cd ..  
  # - cd solver_application  
  # - cmake -H. -B_build  
