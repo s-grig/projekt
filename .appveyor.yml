@@ -2,17 +2,19 @@ version: 1.0.{build}
 
 image: Visual Studio 2019 
 platform:
-  - x86
+ # - x86
   - x64
 configuration: Release
 
 install:
  - cd C:\Tools\vcpkg
- - git pull
- - .\bootstrap-vcpkg.bat
- - cd %APPVEYOR_BUILD_FOLDER%
- - cd c:\tools\vcpkg
  - vcpkg integrate install
+ - vcpkg install sfml:x64-windows
+# - git pull
+# - .\bootstrap-vcpkg.bat
+#- cd %APPVEYOR_BUILD_FOLDER%
+# - cd c:\tools\vcpkg
+ 
  #- .\vcpkg update
  # vcpkg install sfml
  #- vcpkg install libflac:x64-windows
@@ -21,12 +23,14 @@ install:
  #- vcpkg install sfml:x86-windows  
  # cd C:\projects\projekt
 build_script:  
-  - cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...  
-  - cmake -H. -B_build  
-  - cmake --build _build  
-  - cmake --build _build --target main   
-  - _build\Debug\main.exe  
-  - echo "Testing main is done"  
+# скрипт сборки проекта:
+    - mkdir build
+    - cd build
+    - cmake -H. -B_build  
+    - cmake --build _build  
+    - cmake --build _build --target main   
+    - _build\Debug\main.exe  
+    - echo "Testing main is done"  
 
  # - cd solver_application  
  # - cmake -H. -B_build  
