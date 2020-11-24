@@ -11,9 +11,9 @@ install:
  - vcpkg integrate install
  - .\vcpkg update
  #- vcpkg install sfml
- - vcpkg install libflac:x86-windows
+ - vcpkg install libflac:x64-windows
  - vcpkg install sfml:x64-windows
- - vcpkg install sfml:x86-windows  
+ #- vcpkg install sfml:x86-windows  
  - cd ..  
   
 build_script:  
