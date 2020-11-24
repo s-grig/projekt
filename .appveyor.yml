@@ -14,10 +14,10 @@ install:
  - vcpkg install libflac:x64-windows
  - vcpkg install sfml:x64-windows
  #- vcpkg install sfml:x86-windows  
- - cd ..  
+ #- cd ..  
   
 build_script:  
- # - cd hello_world_application  
+  - cd C:\projects\projekt  
   - cmake -H. -B_build  
   - cmake --build _build  
   - cmake --build _build --target kp   

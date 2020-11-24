@@ -24,7 +24,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(kp)
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
-
+#find_package(SFML CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED)
 
 #-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
