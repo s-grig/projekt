@@ -24,3 +24,4 @@ addons:
     - cmake
     - cmake-data
     - rpm
+    - vcpkg
