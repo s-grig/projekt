@@ -55,7 +55,6 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 build cmake_object_order_depends_target_main: phony || CMakeFiles\main.dir
 
 build CMakeFiles\main.dir\source\main.cpp.obj: CXX_COMPILER__main_Debug ..\..\..\source\main.cpp || cmake_object_order_depends_target_main
-  DEFINES = -DFLAC__NO_DLL -DOV_EXCLUDE_STATIC_CALLBACKS
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
   INCLUDES = -I..\..\..\include -IC:\src\vcpkg\installed\x64-windows\include
   OBJECT_DIR = CMakeFiles\main.dir
