@@ -22,10 +22,10 @@ jobs:
     - git clone https://github.com/microsoft/vcpkg
     - cd vcpkg
     - ./bootstrap-vcpkg.sh
-    - vcpkg install sfml
-    - vcpkg install tesseract
-    - vcpkg integrate install
-    - vcpkg list
+    - ./vcpkg install sfml
+    - ./vcpkg install tesseract
+    - ./vcpkg integrate install
+    - ./vcpkg list
     - cd ..
     - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=vcpkgv/scripts/buildsystems/vcpkg.cmake
     - cmake --build _build
