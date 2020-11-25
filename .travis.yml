@@ -22,10 +22,8 @@ jobs:
     - git clone https://github.com/microsoft/vcpkg
     - cd vcpkg
     - ./bootstrap-vcpkg.sh
-    - vcpkg install sfml:x64-windows
-    - vcpkg install sfml:x86-windows
-    - vcpkg install tesseract:x64-windows
-    - vcpkg install tesseract:x86-windows
+    - vcpkg install sfml
+    - vcpkg install tesseract
     - vcpkg integrate install
     - vcpkg list
     - cd ..
