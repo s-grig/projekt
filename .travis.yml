@@ -11,7 +11,7 @@ jobs:
   - os: linux
     script:
     - 
-    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=C:/Tools/vcpkgvcpkg/scripts/buildsystems/vcpkg.cmake
+    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=C:/Tools/vcpkgv/scripts/buildsystems/vcpkg.cmake
     - cmake --build _build
     - cd _build
     - cpack -G DEB
