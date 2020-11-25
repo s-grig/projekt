@@ -68,6 +68,7 @@ build_script:
 after_build:
   - 7z a fluidsynth-vcpkg-%platform%.zip %APPVEYOR_BUILD_FOLDER%\build\src\Release\*
 
+
 artifacts:
   - path: build/fluidsynth-vcpkg-%platform%.zip
     name: FluidSynth
