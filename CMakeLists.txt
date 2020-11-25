@@ -36,7 +36,4 @@ target_include_directories(main
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(main PRIVATE libtesseract)
-target_link_libraries(main PRIVATE FLAC OpenAL OpenGL Vorbis)
-
 target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
-

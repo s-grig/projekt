@@ -1,4 +1,4 @@
-#include <tesseract/baseapi.h>
+п»ї#include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 #include <iostream>
 #include <vector>
@@ -11,13 +11,13 @@ int main()
     char* outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     // Initialize tesseract-ocr with English, without specifying tessdata path
-    if (api->Init("C:\\src\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-1402ed03b0.clean\\tessdata", "eng")) {
+    if (api->Init(NULL, "eng" )) {
         fprintf(stderr, "Could not initialize tesseract.\n");
         exit(1);
     }
     api->SetVariable("tessedit_char_whitelist", "0123456789-.");
     // Open input image with leptonica library
-    Pix* image = pixRead("D:\\Github\\gray.png");
+    Pix* image = pixRead("E:\\Github\\gray.png");
     api->SetImage(image);
     // Get OCR result
     outText = api->GetUTF8Text();
@@ -91,14 +91,14 @@ int main()
 
    sf::RenderWindow window(sf::VideoMode(x_size, y_size), "Funtion plot");
 
-    // Главный цикл приложения. Выполняется, пока открыто окно
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     while (window.isOpen()) {
-        // Обрабатываем очередь событий в цикле
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
         sf::Event event;
         while (window.pollEvent(event)) {
-            // Пользователь нажал на «крестик» и хочет закрыть окно?
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ?
             if (event.type == sf::Event::Closed)
-                // Тогда закрываем его
+                // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
                 window.close();
         }
         window.clear(sf::Color(255, 255, 255, 0));
@@ -107,19 +107,19 @@ int main()
         line.setFillColor(sf::Color(0, 0, 0));
         int new_center_x = x_size / 2;
         int new_center_y = y_size / 2;
-        //Вертикаль Y
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Y
         line.setPosition(border, new_center_y);
         line.setSize(sf::Vector2f(x_size - 2 *border, 4));
         window.draw(line);
 
-        //Горизонталь X
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ X
         line.setPosition(new_center_x, border);
         line.setSize(sf::Vector2f(4, y_size - 2 * border));
         window.draw(line);
 
         sf::Font font;
         if (!font.loadFromFile("D:\\Github\\arial.ttf")) {
-            std::cout << "Ошибка чтения шрифта" << std::endl;
+            std::cout << "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ" << std::endl;
         }
 
         sf::Text text;
@@ -130,7 +130,7 @@ int main()
         unsigned count_marker_y = limit_y1 - limit_y0 / step_y;
         unsigned len_axis_y = y_size - 2 * border;
         for (unsigned u = 0; u <= count_marker_y; u++) {
-            //Текст
+            //пїЅпїЅпїЅпїЅпїЅ
             int var = limit_y0 + (count_marker_y - u) * step_y;
             std::string s = std::to_string(var);
             text.setString(s);
@@ -138,25 +138,25 @@ int main()
             window.draw(text);
 
             line.setFillColor(sf::Color(0, 0, 0));
-            //Горизонтальные
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             line.setPosition(border, len_axis_y / count_marker_y * u + border);
             line.setSize(sf::Vector2f(x_size - 2 * border, 1));
             window.draw(line);
         }
 
-        //Разметка горизонатльной оси
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
         unsigned count_marker_x = limit_x1 - limit_x0 / step_x;
         unsigned len_axis_x = x_size - 2 * border;
         for (unsigned u = 0; u <= count_marker_x; ++u) {
-            //Текст
+            //пїЅпїЅпїЅпїЅпїЅ
             int var = limit_x0 + u * step_x;
             std::string s = std::to_string(var);
             text.setString(s);
             text.setPosition(len_axis_x / count_marker_x * u + border, new_center_y + 15);
             window.draw(text);
 
-            //Вспомогательные линии сетки
-            //вертикальные
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             line.setPosition(len_axis_x / count_marker_x * u + border, border);
             line.setSize(sf::Vector2f(1, y_size - 2 * border));
             window.draw(line);
@@ -173,7 +173,7 @@ int main()
         text.setPosition(new_center_x  - 15, border);
         window.draw(text);
 
-        double scaling_factor_x = (x_size - 2 * border)  / (limit_x1 - limit_x0); //Пиксел в натуре
+        double scaling_factor_x = (x_size - 2 * border)  / (limit_x1 - limit_x0); //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         double scaling_factor_y = (y_size - 2 * border) / (limit_y1 - limit_y0);
         unsigned int marker_size = 3;
 
@@ -198,7 +198,7 @@ int main()
                 window.draw(lines);
             }
         }
-        // Отрисовка окна	
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ	
         window.display(); 
     }*/
    return 0;
