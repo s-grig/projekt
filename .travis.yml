@@ -27,9 +27,9 @@ deploy:
   api_key:
     secure: q4t8lNYUzXHDyc6+8BX1GxgcMOXrKCghjCx7z8PlP+vY7jIx9y0G8w1uTCbx6KBytxe/mTU6At+pHYHtXgyt+hHRlXUD09vQdsdKc/oXsSf40HWPZYu2MRHDHha/ANnGBGS37JO+OBxKg1pBvXWdYcYfWYMSJDutwl+kqLbLbhNUD4bFFZy30Q38jn5NsldCc1aujrloibAGpMcQoh4qxChwXtpsBHeiXD2man7pH+LNdQFGzcR7T+Mznrgocqh75pEHW5CeafwVtyuSLMHL4ogwYoN4u3mFEqrBiZxVxxDwufv0EU+ph3WINQbExnBEuFGGuvaIuNth3INMyuVYYVI4tgB2zJqTR/ZIcmE5TOrZmUfXtYnj3gMNEFJVjZCGJ3n87x2K/B3ViwdoGjAF5r1+0/OAaZYIqHl1jdYWE3BWinWOxJ3nKDeUoRGsskOXkQe1P3X+CXAV0g/MKOSOAWfYEVw5mqqxv0ZSUnEd+ukSBnyyt6qTmljnI2IFqqS+tnio45CyGzf8+aAmFgcfmbm7QRnBJevQncGhPgmQV0fKKgrvXyJbZ//cFJ5TtMRfjZCuC2R3gsAaL+sTlrz2pEVCnkKDsrqLaUjJrf3daJBshXheu5u8StQbYus1QTuv0VXdeak7cJ3V/uMcUWobRZWu5ATDoEQsQRfB05FE4Q0=
   file: 
-    - ./_build/solver-1.0.1.-Darwin.dmg
-    - ./_build/solver-1.0.1.-Linux.deb
-    - ./_build/solver-1.0.1.-Linux.rpm
+    - ./_build/kp-1.0.1.-Darwin.dmg
+    - ./_build/kp-1.0.1.-Linux.deb
+    - ./_build/kp-1.0.1.-Linux.rpm
   skip_cleanup: true
   draft: true
   on:
