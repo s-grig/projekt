@@ -3,15 +3,33 @@ jobs:
   include:
   - os: osx
     script:
-    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+    - git clone https://github.com/microsoft/vcpkg
+    - cd vcpkg
+    - bootstrap-vcpkg.bat
+    - vcpkg install sfml:x64-windows
+    - vcpkg install sfml:x86-windows
+    - vcpkg install tesseract:x64-windows
+    - vcpkg install tesseract:x86-windows
+    - vcpkg integrate install
+    - vcpkg list
+    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=vcpkg\scripts\buildsystems\vcpkg.cmake
     - cmake --build _build
     - cd _build
     - cpack -G DragNDrop
     - cd ..
   - os: linux
     script:
-    - 
-    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=C:/Tools/vcpkgv/scripts/buildsystems/vcpkg.cmake
+    - git clone https://github.com/microsoft/vcpkg
+    - cd vcpkg
+    - ./bootstrap-vcpkg.sh
+    - vcpkg install sfml:x64-windows
+    - vcpkg install sfml:x86-windows
+    - vcpkg install tesseract:x64-windows
+    - vcpkg install tesseract:x86-windows
+    - vcpkg integrate install
+    - vcpkg list
+    - cd ..
+    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=vcpkgv/scripts/buildsystems/vcpkg.cmake
     - cmake --build _build
     - cd _build
     - cpack -G DEB
