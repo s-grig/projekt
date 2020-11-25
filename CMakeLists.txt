@@ -9,8 +9,6 @@ set(KP_VERSION
 ${KP_VERSION_MAJOR}.${KP_VERSION_MINOR}.${KP_VERSION_PATCH}.${KP_VERSION_TWEAK})
 set(KP_VERSION_STRING "v${KP_VERSION}")
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #include("tools/gate/cmake/HunterGate.cmake")
 #include(CPackConfig.cmake)

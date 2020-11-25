@@ -3,14 +3,15 @@ jobs:
   include:
   - os: osx
     script:
-    - cmake -H. -B_build
+    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
     - cmake --build _build
     - cd _build
     - cpack -G DragNDrop
     - cd ..
   - os: linux
     script:
-    - cmake -H. -B_build
+    - 
+    - cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=C:/Tools/vcpkgvcpkg/scripts/buildsystems/vcpkg.cmake
     - cmake --build _build
     - cd _build
     - cpack -G DEB
