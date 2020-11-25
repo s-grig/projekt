@@ -11,13 +11,13 @@ int main()
     char* outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     // Initialize tesseract-ocr with English, without specifying tessdata path
-    if (api->Init("C:\\src\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-1402ed03b0.clean\\tessdata", "eng")) {
+    if (api->Init("E:\\vcpkg\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-1402ed03b0.clean\\tessdata", "eng" )) {
         fprintf(stderr, "Could not initialize tesseract.\n");
         exit(1);
     }
     api->SetVariable("tessedit_char_whitelist", "0123456789-.");
     // Open input image with leptonica library
-    Pix* image = pixRead("D:\\Github\\gray.png");
+    Pix* image = pixRead("E:\\Github\\gray.png");
     api->SetImage(image);
     // Get OCR result
     outText = api->GetUTF8Text();
