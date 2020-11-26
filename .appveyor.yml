@@ -64,7 +64,8 @@ before_build:
     - 7z x C:\projects\projekt\vcpkg-export-20201126-160920.7z c:\Tools\vcpkg\
     - ls
     - vcpkg list
-
+    - cd c:\tools\vcpkg
+    - ls
 build_script:
   - cd C:\projects\projekt
   - mkdir build
