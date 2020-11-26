@@ -45,8 +45,8 @@ install:
  #- .\vcpkg update
  #- vcpkg install sfml
  #- vcpkg install libflac:x64-windows
- #- vcpkg install sfml:x64-windows
- #- vcpkg install tesseract:x64-windows
+  - vcpkg install sfml:x64-windows
+  - vcpkg install tesseract:x64-windows
  #- vcpkg install sfml:x86-windows  
  # cd C:\projects\projekt
 #build_script:  
