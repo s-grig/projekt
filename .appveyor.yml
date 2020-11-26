@@ -33,6 +33,8 @@ install:
   #- vcpkg install sfml:x86-windows
   #- vcpkg install tesseract:x64-windows
   #- vcpkg install tesseract:x86-windows
+  - .\vcpkg update
+  - vcpkg install tesseract:x64-windows
   - vcpkg integrate install
   - vcpkg list
 # - git pull
