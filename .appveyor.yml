@@ -34,7 +34,7 @@ install:
   #- vcpkg install tesseract:x64-windows
   #- vcpkg install tesseract:x86-windows
   - .\vcpkg update
-  - vcpkg install tesseract:x64-windows
+  #- vcpkg install tesseract:x64-windows
   - vcpkg integrate install
   - vcpkg list
 # - git pull
@@ -63,7 +63,7 @@ install:
     #- _build\Debug\main.exe  
     #- echo "Testing main is done"  
 before_build:
-    - 7z x -r C:\projects\projekt\vcpkg-export-20201126-160920.7z -o"C:\Tools\vcpkg\"
+    - 7z x C:\projects\projekt\vcpkg-export-20201126-160920.7z -o"C:\Tools\vcpkg\"
     - ls
     - vcpkg list
     - cd c:\tools\vcpkg
