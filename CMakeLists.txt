@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.8)
 
 set(CMAKE_CXX_STANDARD 17)            
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(KP_VERSION_MAJOR 1)
-set(KP_VERSION_MINOR 1)
-set(KP_VERSION_PATCH 1)
-set(KP_VERSION
-${KP_VERSION_MAJOR}.${KP_VERSION_MINOR}.${KP_VERSION_PATCH}.${KP_VERSION_TWEAK})
-set(KP_VERSION_STRING "v${KP_VERSION}")
+#set(KP_VERSION_MAJOR 1)
+#set(KP_VERSION_MINOR 1)
+#set(KP_VERSION_PATCH 1)
+#set(KP_VERSION
+#${KP_VERSION_MAJOR}.${KP_VERSION_MINOR}.${KP_VERSION_PATCH}.${KP_VERSION_TWEAK})
+#set(KP_VERSION_STRING "v${KP_VERSION}")
 
 
 #include("tools/gate/cmake/HunterGate.cmake")
@@ -20,6 +20,7 @@ set(KP_VERSION_STRING "v${KP_VERSION}")
 # APPVEYOR
 #cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...
 #cmake -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake ...
+
 
 
 

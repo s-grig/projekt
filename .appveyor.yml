@@ -63,7 +63,7 @@ install:
     #- _build\Debug\main.exe  
     #- echo "Testing main is done"  
 before_build:
-    - 7z x C:\projects\projekt\vcpkg-export-20201126-160920.7z -o"C:\Tools\vcpkg\"
+    #- 7z x C:\projects\projekt\vcpkg-export-20201126-160920.7z -o"C:\Tools\vcpkg\"
     - ls
     - vcpkg list
     - cd c:\tools\vcpkg
@@ -72,7 +72,8 @@ build_script:
   - cd C:\projects\projekt
   - mkdir build
   - cd build
-  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201126-160920\scripts\buildsystems\vcpkg.cmake"
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201126-160920\scripts\buildsystems\vcpkg.cmake"
   #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
   #- cmake -Werror=dev -G "%generator%" -A %TARGET_PLATFORM% -T "%toolset%" -Denable-pkgconfig=0 -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
   - cmake --build .

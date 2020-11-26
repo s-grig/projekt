@@ -6,6 +6,7 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 
+
 int main()
 {
     char* outText;
