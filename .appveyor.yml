@@ -29,10 +29,10 @@ install:
   #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
   
   - cd C:\Tools\vcpkg
-  - vcpkg install sfml:x64-windows
-  - vcpkg install sfml:x86-windows
-  - vcpkg install tesseract:x64-windows
-  - vcpkg install tesseract:x86-windows
+  #- vcpkg install sfml:x64-windows
+  #- vcpkg install sfml:x86-windows
+  #- vcpkg install tesseract:x64-windows
+  #- vcpkg install tesseract:x86-windows
   - vcpkg integrate install
   - vcpkg list
 # - git pull
