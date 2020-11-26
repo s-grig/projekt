@@ -61,7 +61,7 @@ install:
     #- _build\Debug\main.exe  
     #- echo "Testing main is done"  
 before_build:
-    - 7z ./vcpkg-export-20201126-160920.7z c:/Tools/vcpkg/
+    - 7z ./ vcpkg-export-20201126-160920.7z c:/Tools/vcpkg/
     - ls
 
 build_script:
