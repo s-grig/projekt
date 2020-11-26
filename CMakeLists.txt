@@ -19,13 +19,19 @@ set(KP_VERSION_STRING "v${KP_VERSION}")
 #)
 # APPVEYOR
 #cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...
+#cmake -DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake ...
+
+if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      CACHE STRING "")
+endif()
+
 project(kp)
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
 #find_package(SFML CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED)
 
-#-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 add_executable(main
 ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp)
