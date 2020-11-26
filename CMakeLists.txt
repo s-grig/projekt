@@ -19,9 +19,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #)
 # APPVEYOR
 #cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...
-#cmake -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake ...
-
-
+#cmake -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 
 project(kp)
