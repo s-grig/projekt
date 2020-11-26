@@ -50,18 +50,18 @@ The CXX compiler identification is MSVC, found in "C:/DATA/GitHub_Stas/projekt/o
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_41e70 && [1/2] Building C object CMakeFiles\cmTC_41e70.dir\CMakeCCompilerABI.c.obj
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_60643 && [1/2] Building C object CMakeFiles\cmTC_60643.dir\CMakeCCompilerABI.c.obj
 Примечание: включение файла:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCompilerABI.h
-[2/2] Linking C executable cmTC_41e70.exe
+[2/2] Linking C executable cmTC_60643.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_a0557 && [1/2] Building CXX object CMakeFiles\cmTC_a0557.dir\CMakeCXXCompilerABI.cpp.obj
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f12a0 && [1/2] Building CXX object CMakeFiles\cmTC_f12a0.dir\CMakeCXXCompilerABI.cpp.obj
 Примечание: включение файла:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCompilerABI.h
-[2/2] Linking CXX executable cmTC_a0557.exe
+[2/2] Linking CXX executable cmTC_f12a0.exe
 
 
 

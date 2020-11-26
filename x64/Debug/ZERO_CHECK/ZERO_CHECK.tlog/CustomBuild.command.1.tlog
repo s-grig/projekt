@@ -1,0 +1,10 @@
+^C:\DATA\GITHUB_STAS\PROJEKT\CMAKEFILES\61C1FB0A291758111CE7E50ADD5A7D9D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/DATA/GitHub_Stas/projekt -BC:/DATA/GitHub_Stas/projekt --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/DATA/GitHub_Stas/projekt/kp.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
