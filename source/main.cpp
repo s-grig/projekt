@@ -11,7 +11,7 @@ int main()
     char* outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     // Initialize tesseract-ocr with English, without specifying tessdata path
-    if (api->Init(NULL, "eng")) {
+    if (api->Init("C:\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-3a7d5a1d2b.clean\\tessdata", "eng")) {
         fprintf(stderr, "Could not initialize tesseract.\n");
         exit(1);
     }
