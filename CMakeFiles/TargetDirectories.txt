@@ -1,4 +1,0 @@
-C:/DATA/GitHub_Stas/projekt/CMakeFiles/main.dir
-C:/DATA/GitHub_Stas/projekt/CMakeFiles/PACKAGE.dir
-C:/DATA/GitHub_Stas/projekt/CMakeFiles/ALL_BUILD.dir
-C:/DATA/GitHub_Stas/projekt/CMakeFiles/ZERO_CHECK.dir
