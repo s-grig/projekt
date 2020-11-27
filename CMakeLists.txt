@@ -2,15 +2,13 @@ cmake_minimum_required(VERSION 3.8)
 
 set(CMAKE_CXX_STANDARD 17)            
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(KP_VERSION_MAJOR 1)
-set(KP_VERSION_MINOR 0)
-set(KP_VERSION_PATCH 1)
-set(KP_VERSION
-${KP_VERSION_MAJOR}.${KP_VERSION_MINOR}.${KP_VERSION_PATCH}.${KP_VERSION_TWEAK})
-set(KP_VERSION_STRING "v${KP_VERSION}")
+#set(KP_VERSION_MAJOR 1)
+#set(KP_VERSION_MINOR 1)
+#set(KP_VERSION_PATCH 1)
+#set(KP_VERSION
+#${KP_VERSION_MAJOR}.${KP_VERSION_MINOR}.${KP_VERSION_PATCH}.${KP_VERSION_TWEAK})
+#set(KP_VERSION_STRING "v${KP_VERSION}")
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #include("tools/gate/cmake/HunterGate.cmake")
 #include(CPackConfig.cmake)
@@ -21,13 +19,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #)
 # APPVEYOR
 #cmake -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake ...
+#cmake -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+
 project(kp)
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
 #find_package(SFML CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED)
 
-#-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 add_executable(main
 ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp)

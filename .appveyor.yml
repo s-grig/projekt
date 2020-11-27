@@ -23,16 +23,18 @@ init:
 
 install:
 # make sure the latest version of git is installed
-  - choco upgrade git ninja -y
-  - ninja --version
+  #- choco upgrade git ninja -y
+  #- ninja --version
   - cmake --version
-
-
+  #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  
   - cd C:\Tools\vcpkg
-  - vcpkg install sfml:x64-windows
-  - vcpkg install sfml:x86-windows
-  - vcpkg install tesseract:x64-windows
-  - vcpkg install tesseract:x86-windows
+  #- vcpkg install sfml:x64-windows
+  #- vcpkg install sfml:x86-windows
+  #- vcpkg install tesseract:x64-windows
+  #- vcpkg install tesseract:x86-windows
+  #- .\vcpkg update
+  #- vcpkg install tesseract:x64-windows
   - vcpkg integrate install
   - vcpkg list
 # - git pull
@@ -41,10 +43,10 @@ install:
 # - cd c:\tools\vcpkg
  
  #- .\vcpkg update
- # vcpkg install sfml
+ #- vcpkg install sfml
  #- vcpkg install libflac:x64-windows
- #- vcpkg install sfml:x64-windows
- #- vcpkg install tesseract:x64-windows
+  - vcpkg install sfml:x64-windows
+  - vcpkg install tesseract:x64-windows
  #- vcpkg install sfml:x86-windows  
  # cd C:\projects\projekt
 #build_script:  
@@ -52,24 +54,38 @@ install:
     #- cd C:\projects\projekt
     ##- mkdir build
     ##- cd build
-    #- cmake -H. -B_build  
+    #работает на комп эта строка
+   # - cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+
+    #- cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake
     #- cmake --build _build  
     #- cmake --build _build --target main   
     #- _build\Debug\main.exe  
     #- echo "Testing main is done"  
+before_build:
+    #- 7z x C:\projects\projekt\vcpkg-export-20201126-160920.7z -o"C:\Tools\vcpkg\"
+    - ls
+    - vcpkg list
+    - cd c:\tools\vcpkg
+    - ls
 build_script:
   - cd C:\projects\projekt
   - mkdir build
   - cd build
-  - cmake -Werror=dev -G "%generator%" -A %TARGET_PLATFORM% -T "%toolset%" -Denable-pkgconfig=0 -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
-  - cmake --build . --config Release # build libfluidsynth and fluidsynth exec
-  - if not "%platform%"=="ARM" ( cmake --build . --config Release --target check ) # build and exec unittests, unless when cross-compiling
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201126-160920\scripts\buildsystems\vcpkg.cmake"
+  #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  #- cmake -Werror=dev -G "%generator%" -A %TARGET_PLATFORM% -T "%toolset%" -Denable-pkgconfig=0 -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
+  - cmake --build .
+  - .\Debug\main.exe
+
 
 after_build:
   - 7z a fluidsynth-vcpkg-%platform%.zip %APPVEYOR_BUILD_FOLDER%\build\src\Release\*
 
+
 artifacts:
-  - path: build/fluidsynth-vcpkg-%platform%.zip
-    name: FluidSynth
+  - path: build/projekt-vcpkg-%platform%.zip
+    name: projekt
 
  
