@@ -45,8 +45,8 @@ install:
  #- .\vcpkg update
  #- vcpkg install sfml
  #- vcpkg install libflac:x64-windows
-  - vcpkg install sfml:x64-windows
-  - vcpkg install tesseract:x64-windows
+ # - vcpkg install sfml:x64-windows
+ # - vcpkg install tesseract:x64-windows
  #- vcpkg install sfml:x86-windows  
  # cd C:\projects\projekt
 #build_script:  
@@ -63,17 +63,25 @@ install:
     #- _build\Debug\main.exe  
     #- echo "Testing main is done"  
 before_build:
-    #- 7z x C:\projects\projekt\vcpkg-export-20201126-160920.7z -o"C:\Tools\vcpkg\"
+    - wget https://stasg.ru/tv/vcpkg-export-20201127-230613.7z
+
+    - 7z x C:\Tools\vcpkg\vcpkg-export-20201127-230613.7z -o"C:\Tools\vcpkg\"
     - ls
     - vcpkg list
     - cd c:\tools\vcpkg
     - ls
+    - cd C:\  
+    - ls
+    - mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+    - cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+    - wget https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata
+
 build_script:
   - cd C:\projects\projekt
   - mkdir build
   - cd build
-  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
-  #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201126-160920\scripts\buildsystems\vcpkg.cmake"
+  #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201127-230613\scripts\buildsystems\vcpkg.cmake"
   #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
   #- cmake -Werror=dev -G "%generator%" -A %TARGET_PLATFORM% -T "%toolset%" -Denable-pkgconfig=0 -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
   - cmake --build .
