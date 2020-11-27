@@ -62,19 +62,19 @@ install:
     #- cmake --build _build --target main   
     #- _build\Debug\main.exe  
     #- echo "Testing main is done"  
-before_build:
-    - wget https://stasg.ru/tv/vcpkg-export-20201127-230613.7z
 
-    - 7z x C:\Tools\vcpkg\vcpkg-export-20201127-230613.7z -o"C:\Tools\vcpkg\"
-    - ls
-    - vcpkg list
-    - cd c:\tools\vcpkg
-    - ls
-    - cd C:\  
-    - ls
-    - mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
-    - cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
-    - wget https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata
+    #- wget https://stasg.ru/tv/vcpkg-export-20201127-230613.7z
+  - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201127-230613.7z'
+  - 7z x C:\Tools\vcpkg\vcpkg-export-20201127-230613.7z -o"C:\Tools\vcpkg\"
+  - ls
+  - vcpkg list
+  - cd c:\tools\vcpkg
+  - ls
+  - cd C:\  
+  - ls
+  - mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+  - cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+  - ps: Start-FileDownload 'https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata'
 
 build_script:
   - cd C:\projects\projekt
