@@ -7,8 +7,11 @@
 #include <SFML/Graphics.hpp>
 
 
-int main()
+
+
+int main(int argc, char* argv[])
 {
+    
     char* outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     // Initialize tesseract-ocr with English, without specifying tessdata path

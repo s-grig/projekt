@@ -260,6 +260,12 @@ PNG_LIBRARY_RELEASE:FILEPATH=C:/vcpkg/installed/x64-windows/lib/libpng16.lib
 //Path to a file.
 PNG_PNG_INCLUDE_DIR:PATH=C:/vcpkg/installed/x64-windows/include
 
+//The directory containing a CMake configuration file for Qt5Core.
+Qt5Core_DIR:PATH=C:/vcpkg/installed/x64-windows/share/cmake/Qt5Core
+
+//The directory containing a CMake configuration file for Qt5Gui.
+Qt5Gui_DIR:PATH=C:/vcpkg/installed/x64-windows/share/cmake/Qt5Gui
+
 //The directory containing a CMake configuration file for SFML.
 SFML_DIR:PATH=C:/vcpkg/installed/x64-windows/share/sfml
 

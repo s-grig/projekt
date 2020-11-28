@@ -27,13 +27,16 @@ project(kp)
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
 #find_package(SFML CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED)
-
+find_package(Qt5Gui CONFIG REQUIRED)
 
 add_executable(main
 ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp)
+
 
 target_include_directories(main
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(main PRIVATE libtesseract)
 target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
+target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
+
