@@ -18,7 +18,7 @@ int main()
     }
     api->SetVariable("tessedit_char_whitelist", "0123456789-.");
     // Open input image with leptonica library
-    Pix* image = pixRead("C:\\DATA\\Github_Stas\\1111.png");
+    Pix* image = pixRead("C:\\DATA\\Github_Stas\\projekt\\1111.png");
     api->SetImage(image);
     // Get OCR result
     outText = api->GetUTF8Text();
