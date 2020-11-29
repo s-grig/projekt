@@ -71,11 +71,10 @@ artifacts:
   - path: ./build/*.exe
     name: projekt 
 deploy:
-   - release: $(APPVEYOR_REPO_TAG_NAME)
+ #- release: $(APPVEYOR_REPO_TAG_NAME)
    - description: 'Release description'
    - provider: GitHub
      auth_token:
-
      secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
 
 on:
