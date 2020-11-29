@@ -41,8 +41,6 @@ install:
     #- wget https://stasg.ru/tv/vcpkg-export-20201130-003734.7z
   - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
   - 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
-  - ls
-  - vcpkg list
   - cd c:\tools\vcpkg
   - cd C:\  
   - mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
@@ -60,11 +58,8 @@ build_script:
 
 test_script:
     # скрипт тестирования проекта:
-  - ctest -C %CONFIGURATION% --output-on-failure
+  #- ctest -C %CONFIGURATION% --output-on-failure
 
-
-after_build:
-  - 7z a projekt-vcpkg-%platform%.zip %APPVEYOR_BUILD_FOLDER%\build\src\Release\*
 
 
 artifacts:
