@@ -71,6 +71,6 @@ artifacts:
 #description: 'Release description'
 deploy:
  - description: 'PROJEKT'
- - provider: GitHub
+provider: GitHub
              secure:9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
      
