@@ -78,5 +78,3 @@ deploy:
    auth_token:
     secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
 
-on:
-    APPVEYOR_REPO_TAG: true
