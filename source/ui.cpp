@@ -1,5 +1,5 @@
 #include "ui.hpp"
-
+#include "moc_ui.cpp"
  Win::Win(QWidget* parent) :QWidget(parent) {
 	setWindowTitle("Plot builder");
 	label = new QLabel("Choose a photo with digits or press the exit button", this);
@@ -38,7 +38,7 @@ std::pair<std::string, std::string> Win::photo_processing() {
     std::string path_to_photo = get_path().toUtf8().constData();
     std::string outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
-    if (api->Init("C:\\src\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-1402ed03b0.clean\\tessdata", "eng")) {
+    if (api->Init("C:\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-3a7d5a1d2b.clean\\tessdata", "eng")) {
         throw std::exception("Could not initialize tesseract.");
     }
     Pix* image = pixRead(path_to_photo.c_str());
@@ -96,4 +96,3 @@ std::pair<std::string, std::string> Win::photo_processing() {
      return std::make_pair(x, y);
 }
 
-#include "moc_ui.cpp"
