@@ -53,6 +53,14 @@ rule RERUN_CMAKE
 
 
 #############################################
+# Rule for cleaning additional files.
+
+rule CLEAN_ADDITIONAL
+  command = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCONFIG=$CONFIG -P CMakeFiles\clean_additional.cmake
+  description = Cleaning additional files...
+
+
+#############################################
 # Rule for cleaning all built files.
 
 rule CLEAN
