@@ -1,5 +1,0 @@
-C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug (по умолчанию)/CMakeFiles/edit_cache.dir
-C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug (по умолчанию)/CMakeFiles/main.dir
-C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug (по умолчанию)/CMakeFiles/rebuild_cache.dir
-C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug (по умолчанию)/CMakeFiles/main_autogen_timestamp_deps.dir
-C:/DATA/GitHub_Stas/projekt/out/build/x64-Debug (по умолчанию)/CMakeFiles/main_autogen.dir
