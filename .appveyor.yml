@@ -4,7 +4,10 @@ image: Visual Studio 2019
 platform:
  # - x86
   - x64
-configuration: Release
+configuration:
+    # ... и в дебажной, и в релизной конфигурациях ...
+    - Debug
+    - Release
 
 cache:
   - c:\Tools\vcpkg\installed
@@ -21,42 +24,14 @@ init:
   - echo %generator%
   - echo %toolset%
 
-install:
-# make sure the latest version of git is installed
-  #- choco upgrade git ninja -y
-  #- ninja --version
-  - cmake --version
-  #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
-  
-  - cd C:\Tools\vcpkg
-  #- vcpkg install sfml:x64-windows
-  #- vcpkg install sfml:x86-windows
-  #- vcpkg install tesseract:x64-windows
-  #- vcpkg install tesseract:x86-windows
-  #- .\vcpkg update
-  #- vcpkg install tesseract:x64-windows
-  #- vcpkg integrate install
-  - vcpkg list
-# - git pull
-# - .\bootstrap-vcpkg.bat
-#- cd %APPVEYOR_BUILD_FOLDER%
-# - cd c:\tools\vcpkg
- 
- #- .\vcpkg update
- #- vcpkg install sfml
- #- vcpkg install libflac:x64-windows
- # - vcpkg install sfml:x64-windows
- # - vcpkg install tesseract:x64-windows
- #- vcpkg install sfml:x86-windows  
- # cd C:\projects\projekt
-#build_script:  
-# скрипт сборки проекта:
-    #- cd C:\projects\projekt
-    ##- mkdir build
-    ##- cd build
-    #работает на комп эта строка
-   # - cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+matrix:
+    fast_finish: false
 
+install:
+  - cmake --version
+    
+  - cd C:\Tools\vcpkg
+  
     #- cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake
     #- cmake --build _build  
     #- cmake --build _build --target main   
@@ -78,12 +53,14 @@ build_script:
   - cd C:\projects\projekt
   - mkdir build
   - cd build
-  #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-  #- cmake -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
-  #- cmake -Werror=dev -G "%generator%" -A %TARGET_PLATFORM% -T "%toolset%" -Denable-pkgconfig=0 -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_VERBOSE_MAKEFILE=1 -DNO_GUI=1 ..
-  - cmake --build .
-  - .\Debug\main.exe
+  - cmake --build . %CMAKE_BUILD_FLAGS%
+ # - .\Debug\main.exe
+  - echo "Testing main is done"
+
+test_script:
+    # скрипт тестирования проекта:
+  - ctest -C %CONFIGURATION% --output-on-failure
 
 
 after_build:
@@ -91,7 +68,17 @@ after_build:
 
 
 artifacts:
-  - path: build/projekt-vcpkg-%platform%.zip
+  - path: ./build/*.exe
     name: projekt
+    
+deploy:
 
- 
+release: $(APPVEYOR_REPO_TAG_NAME)
+description: 'Release description'
+
+provider: GitHub
+auth_token:
+    secure: zsiJGPNgQ2m1iHORIXptBUIAzG8D9t98hjfVS2uL1q++s87bB5hX+/so1rTiL48y
+
+on:
+    APPVEYOR_REPO_TAG: true
