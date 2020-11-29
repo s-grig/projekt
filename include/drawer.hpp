@@ -117,7 +117,7 @@ public:
             window.draw(line);
 
             sf::Font font;
-            if (!font.loadFromFile("arial.ttf")) {
+            if (!font.loadFromFile("file/font/ARIAL.TTF")) {
                 std::cout << "Ошибка чтения шрифта" << std::endl;
             }
 
