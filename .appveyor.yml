@@ -55,8 +55,11 @@ build_script:
   - cmake --build . %CMAKE_BUILD_FLAGS%
  # - .\Debug\main.exe
   - echo "Testing main is done"
+  - cd build
+  - ls
 
-test_script:
+#test_script:
+
     # скрипт тестирования проекта:
   #- ctest -C %CONFIGURATION% --output-on-failure
 
@@ -68,8 +71,8 @@ artifacts:
 #description: 'Release description'
 deploy:
  - release: $(APPVEYOR_REPO_TAG_NAME)
-   description: 'Release description'
+   description: 'PROJEKT'
    provider: GitHub
-   auth_token:
+   auth_token: 881ff1b1dd847220194eda5618c7dd4cd90b89c5
     secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
 
