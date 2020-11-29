@@ -72,10 +72,16 @@ artifacts:
     name: projekt
     
 deploy:
-
+- description: 'Release description'
 - provider: GitHub
-auth_token:
-    secure: zsiJGPNgQ2m1iHORIXptBUIAzG8D9t98hjfVS2uL1q++s87bB5hX+/so1rTiL48y
+environment:
+    my_variable:
+    secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
+
+
+
+#auth_token:
+#    secure: 881ff1b1dd847220194eda5618c7dd4cd90b89c5
 
 on:
     APPVEYOR_REPO_TAG: true
