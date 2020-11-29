@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     //api->SetVariable("tessedit_char_whitelist", "0123456789-.");
     try {
-        if (api->Init("C:\\src\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-1402ed03b0.clean\\tessdata", "eng")) {
+        if (api->Init("C:\\vcpkg\\buildtrees\\tesseract\\src\\4.1.1-3a7d5a1d2b.clean\\tessdata", "eng")) {
             throw std::exception("Could not initialize tesseract.");
         }
         Pix* image = pixRead(path_to_photo.c_str());
