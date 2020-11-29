@@ -74,14 +74,9 @@ artifacts:
 deploy:
 - description: 'Release description'
 - provider: GitHub
-environment:
-    my_variable:
-    secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
 
-
-
-#auth_token:
-#    secure: 881ff1b1dd847220194eda5618c7dd4cd90b89c5
+- auth_token:
+     secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
 
 on:
     APPVEYOR_REPO_TAG: true
