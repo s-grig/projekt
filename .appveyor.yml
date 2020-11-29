@@ -70,8 +70,7 @@ artifacts:
     name: projekt 
 #description: 'Release description'
 deploy:
-release: $(APPVEYOR_REPO_TAG_NAME)
-description: 'PROJEKT'
-provider: GitHub
+ - description: 'PROJEKT'
+ - provider: GitHub
              secure:9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
      
