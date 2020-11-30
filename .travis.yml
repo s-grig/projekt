@@ -40,10 +40,8 @@ script:
  #- cd hello_world_application
   
   
-  - mkdir build
-    - cd build
-    - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
-    - cmake --build .
-    - ctest --output-on-failure
-    - echo "Main application testing is done"
+  - cmake -H. -B_build
+  - cmake --build _build
+  - cmake --build _build --target install
+  - echo "Main application testing is done"
  
