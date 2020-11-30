@@ -70,5 +70,6 @@ artifacts:
 #description: 'Release description'
 deploy:
  - provider: GitHub
- - my_variable:
-      secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
+ - secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
+   artifact: /.*\.nupkg/
+    
