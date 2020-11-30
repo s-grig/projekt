@@ -51,9 +51,9 @@ artifacts:
  - path: /.*\.nupkg/
  
 deploy:
- - provider: GitHub
- - auth_token:
+- provider: GitHub
+  auth_token:
     secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
 
- - artifact: /.*\.nupkg/           
+- artifact: /.*\.nupkg/           
  
