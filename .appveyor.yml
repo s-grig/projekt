@@ -40,7 +40,7 @@ install:
 
 
 build_script:
-  - cmd: cmake -H. -B_build .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
+  - cmd: cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake
   - cmd: cmake --build _build --config Release
   - cmd: cd _build
   - cmd: ls
