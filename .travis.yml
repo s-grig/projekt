@@ -14,13 +14,14 @@ addons:
    - cmake-data
    - clang-5.0
    - g++-7
+   - vcpkg
 
 script:
  #- cd hello_world_application
   - ls
   - mkdir build
   - cd build
-  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=.\scripts\buildsystems\vcpkg.cmake"
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=.\vcpkg\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
   - ./_build/main
   - echo "Main application testing is done"
