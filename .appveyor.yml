@@ -21,7 +21,6 @@ install:
   - cmake --version
     
   - cd C:\Tools\vcpkg
-
    
     #- cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake
     #- cmake --build _build  
@@ -53,12 +52,10 @@ artifacts:
  
 deploy:
  - release: myproduct-v$(APPVEYOR_BUILD_VERSION)
- -  description: 'Release description'
+ - description: 'Release description'
  - provider: GitHub
  - auth_token:
     secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+
  - artifact: /.*\.nupkg/           
  
- 
-
-
