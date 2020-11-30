@@ -36,13 +36,21 @@ script:
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   - ls
   - cmake --version
-  - cd ..
-  - ls
-  - cd ..
-  - ls
+  - cd home/travis/build/s-grig/projekt
+  - mkdir sfml
+  - cd sfml
+  - wget https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
+  - unzip SFML-2.5.1-sources.zip
+  - cd SFML-2.5.1
+  - sudo apt-get install libx11-dev libgl1-mesa-dev libudev-dev libfreetype6-dev libopenal-dev libflac-dev libvorbis-dev
+  - sudo aptitude install x11-xserver-utils
+  - sudo apt install libavcodec-dev libavformat-dev libswscale-dev
+  - sudo apt-get install xorg-dev -y
+  - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
+  - sudo make && make install
 
   - mkdir build && cd build
-  - cmake .. 
+  - cmake -DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../
   - cmake --build . --target install
   - echo "Main application testing is done"
  
