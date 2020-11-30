@@ -49,13 +49,16 @@ build_script:
   - echo "Testing main is done"
  
 artifacts:
- - path: ./build/*.exe
+ - path: /.*\.nupkg/
  
 deploy:
- - description: 'Release description'
+ - release: myproduct-v$(APPVEYOR_BUILD_VERSION)
+ -  description: 'Release description'
  - provider: GitHub
-   auth_token:
-   secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+ - auth_token:
+    secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+ - artifact: /.*\.nupkg/           
+ 
  
 
 
