@@ -20,7 +20,7 @@ addons:
    - clang-5.0
    - g++-7
 before_install:
-   - sudo apt-get install libsfml-dev
+   - sudo aptitude install libsfml-dev
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    - sudo apt-get update -qq
    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev
