@@ -52,12 +52,12 @@ build_script:
   - mkdir build
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-  - cmake --build . %CMAKE_BUILD_FLAGS%
+  - cmake --build .
  # - .\Debug\main.exe
   - echo "Testing main is done"
  
 artifacts:
- - path: '/.*\.exe/'
+ - path: ./build/*.exe
  
 deploy:
 # - description: 'Release description'
