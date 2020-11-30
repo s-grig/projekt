@@ -15,15 +15,23 @@ addons:
    - clang-5.0
    - g++-7
 before_install:
-   - git clone https://github.com/microsoft/vcpkg
-   
-   - cd vcpkg
-   - bootstrap-vcpkg.sh
-   - vcpkg list
-   - ls
-   - cd ..
+   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+   - sudo apt-get update -qq
+   - sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev  
+   - sudo apt-get install libsfml-dev
+
 
 script:
+  - export TESSERACT_VERSION=4.0.0-1
+  - export TESSERACT_INSTALL=$HOME/.tesseract
+  - export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
+  - export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
+  - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
+  - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
+ 
+  - qmake -qt=qt5 -v
+  - qmake -qt=qt5
+  - make
  #- cd hello_world_application
   
   - mkdir build
