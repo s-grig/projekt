@@ -14,16 +14,17 @@ addons:
    - cmake-data
    - clang-5.0
    - g++-7
-   - vcpkg
+before_install:
+   - git clone https://github.com/microsoft/vcpkg
+   - ./vcpkg/bootstrap-vcpkg.sh
+   - cd vcpkg
+   - vcpkg list
+   - ls
+   - cd ..
 
 script:
  #- cd hello_world_application
-  - git clone https://github.com/microsoft/vcpkg
-  - ./vcpkg/bootstrap-vcpkg.sh
-  - cd vcpkg
-  - vcpkg list
-  - ls
-  - cd ..
+  
   - mkdir build
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=.\vcpkg\scripts\buildsystems\vcpkg.cmake"
