@@ -60,7 +60,6 @@ artifacts:
  - path: '/.*\.exe/'
  
 deploy:
- - release: $(APPVEYOR_REPO_TAG_NAME)
  - description: 'Release description'
  - provider: GitHub
       auth_token:4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
