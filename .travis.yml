@@ -36,9 +36,10 @@ script:
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
 
  
-  - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
+  - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON
   - cmake --build _build
   - cmake --build _build --target install
+  - cmake --build _build --target test -- ARGS=--verbose
   
   - echo "Main application testing is done"
  
