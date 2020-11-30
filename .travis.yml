@@ -47,7 +47,7 @@ script:
   - sudo apt install libavcodec-dev libavformat-dev libswscale-dev
   - sudo apt-get install xorg-dev -y
   - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
-  - sudo make && make install
+  - sudo make && sudo make install
   - cd ..
   - cd ..
 
