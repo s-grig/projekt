@@ -18,7 +18,7 @@ before_install:
    - git clone https://github.com/microsoft/vcpkg
    
    - cd vcpkg
-   - ./bootstrap-vcpkg.sh
+   - bootstrap-vcpkg.sh
    - vcpkg list
    - ls
    - cd ..
