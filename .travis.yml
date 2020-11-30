@@ -20,21 +20,23 @@ addons:
    - clang-5.0
    - g++-7
 before_install:
-   - sudo aptitude install libsfml-dev -y
+   #- sudo aptitude install libsfml-dev -y
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    - sudo apt-get update -qq
    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+   - sudo apt install tesseract-ocr
 
 
 script:
-  - export TESSERACT_VERSION=4.0.0-1
-  - export TESSERACT_INSTALL=$HOME/.tesseract
-  - export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
-  - export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
-  - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
-  - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
-  - ls
+  - 
+  #- export TESSERACT_VERSION=4.0.0-1
+  #- export TESSERACT_INSTALL=$HOME/.tesseract
+  #- export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
+  #- export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
+  #- export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
+  #- wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
+  #- ls
   - cmake --version
   #- cd home/travis/build/s-grig/projekt
   - mkdir sfml
@@ -53,6 +55,7 @@ script:
 
   - mkdir build && cd build
   - cmake -DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../
+  - cmake ..
   - cmake --build .
   - echo "Main application testing is done"
  
