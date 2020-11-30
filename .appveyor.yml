@@ -18,14 +18,6 @@ install:
   - cmake --version
     
   - cd C:\Tools\vcpkg
-   
-    #- cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake
-    #- cmake --build _build  
-    #- cmake --build _build --target main   
-    #- _build\Debug\main.exe  
-    #- echo "Testing main is done"  
-
-    #- wget https://stasg.ru/tv/vcpkg-export-20201130-003734.7z
   - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
   - 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
   - cd c:\tools\vcpkg
