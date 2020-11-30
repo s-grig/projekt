@@ -17,7 +17,10 @@ addons:
 before_install:
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    - sudo apt-get update -qq
-   - sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev  
+   - sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev 
+   - qmake -qt=qt5 -v
+   - qmake -qt=qt5
+   - make
    - sudo apt-get install libsfml-dev
 
 
@@ -29,15 +32,13 @@ script:
   - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
  
-  - qmake -qt=qt5 -v
-  - qmake -qt=qt5
-  - make
+  
  #- cd hello_world_application
   
-  - mkdir build
-  - cd build
-  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=.\vcpkg\scripts\buildsystems\vcpkg.cmake"
-  - cmake --build .
+  
+  - cmake -H. -B_build
+  - cmake --build _build
+  - cmake --build _build --target hello_world
   - ./_build/main
   - echo "Main application testing is done"
  
