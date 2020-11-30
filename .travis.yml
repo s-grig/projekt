@@ -35,12 +35,8 @@ script:
   - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
 
- 
-  
- #- cd hello_world_application
-  
-  
-  - cmake -H. -B_build
+   
+  - cmake -H. -B_build --target install
   - cmake --build _build
   - cmake --build _build --target install
   - echo "Main application testing is done"
