@@ -44,16 +44,16 @@ build_script:
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
- # - .\Debug\main.exe
+  - build\Debug\main.exe
   - echo "Testing main is done"
  
-artifacts:
- - path: /.*\.nupkg/
+#artifacts:
+# - path: /.*\.nupkg/
  
-deploy:
-- provider: GitHub
-  auth_token:
-    secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+#deploy:
+#- provider: GitHub
+#  auth_token:
+#    secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
 
-artifact: /.*\.nupkg/           
+    
  
