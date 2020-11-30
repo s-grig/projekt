@@ -51,7 +51,6 @@ artifacts:
  - path: /.*\.nupkg/
  
 deploy:
- - description: 'Release description'
  - provider: GitHub
  #- description: ''
  - auth_token:
