@@ -36,7 +36,7 @@ script:
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   - ls
   - cmake --version
-  - cd home/travis/build/s-grig/projekt
+  #- cd home/travis/build/s-grig/projekt
   - mkdir sfml
   - cd sfml
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
@@ -48,9 +48,11 @@ script:
   - sudo apt-get install xorg-dev -y
   - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
   - sudo make && make install
+  - cd ..
+  - cd ..
 
   - mkdir build && cd build
   - cmake -DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../
-  - cmake --build . --target install
+  - cmake --build .
   - echo "Main application testing is done"
  
