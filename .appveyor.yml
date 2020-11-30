@@ -65,8 +65,8 @@ build_script:
 
 
 artifacts:
-  - path: /.*\.exe/
-#description: 'Release description'
+  - path: '/.*\.exe/'
+description: 'Release description'
 deploy:
 - provider: GitHub
       auth_token:4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
