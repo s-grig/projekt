@@ -38,6 +38,16 @@ script:
   #- wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   #- ls
   - cmake --version
+  - tesseract --version
+  - git clone https://github.com/microsoft/vcpkg
+  - ./vcpkg/bootstrap-vcpkg.sh
+  - cd vcpkg 
+  - ./vcpkg list
+  
+  - ./vcpkg install sfml tesseract 
+  - ./vcpkg install qt5-imageformats
+  - ./vcpkg list
+
   #- cd home/travis/build/s-grig/projekt
   - mkdir sfml
   - cd sfml
