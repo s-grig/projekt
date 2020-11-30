@@ -7,8 +7,8 @@ env:
     # список переменных окружени€, вли€ющих на матрицу сборки:
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
-    - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
-    - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 addons:
  apt:
   sources:
@@ -35,11 +35,13 @@ script:
   - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   - ls
+  - cmake --version
  
 
   - mkdir build && cd build
-  - cmake .. $CMAKE_FLAGS -DCMAKE_INSTALL_PREFIX=../install -DSFML_BUILD_EXAMPLES=TRUE -DCMAKE_VERBOSE_MAKEFILE=ON
-  - cmake --build . --target install
-  
+  - cmake .. 
+  #- cmake --build . --target install
+  - make
+  - make test
   - echo "Main application testing is done"
  
