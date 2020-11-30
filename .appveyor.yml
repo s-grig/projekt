@@ -51,9 +51,9 @@ artifacts:
  - path: /.*\.nupkg/
  
 deploy:
- - release: myproduct-v$(APPVEYOR_BUILD_VERSION)
  - description: 'Release description'
  - provider: GitHub
+ - description: ''
  - auth_token:
     secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
 
