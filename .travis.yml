@@ -17,9 +17,11 @@ addons:
 
 script:
  #- cd hello_world_application
- - cmake -H. -B_build
- - cmake --build _build
- - cmake --build _build --target hello_world
- - ./_build/main
- - echo "Main application testing is done"
+  - ls
+  - mkdir build
+  - cd build
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=.\scripts\buildsystems\vcpkg.cmake"
+  - cmake --build .
+  - ./_build/main
+  - echo "Main application testing is done"
  
