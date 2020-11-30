@@ -53,7 +53,7 @@ artifacts:
 deploy:
  - description: 'Release description'
  - provider: GitHub
- - description: ''
+ #- description: ''
  - auth_token:
     secure: 4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
 
