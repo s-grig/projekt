@@ -9,10 +9,7 @@ configuration:
     - Debug
     - Release
 
-cache:
-  - c:\Tools\vcpkg\installed
-  #cache: c:\tools\vcpkg\installed\
- 
+
 
 matrix:
     fast_finish: false
