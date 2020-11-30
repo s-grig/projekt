@@ -36,12 +36,13 @@ script:
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   - ls
   - cmake --version
- 
+  - cd ..
+  - ls
+  - cd ..
+  - ls
 
   - mkdir build && cd build
   - cmake .. 
-  #- cmake --build . --target install
-  - make
-  - make test
+  - cmake --build . --target install
   - echo "Main application testing is done"
  
