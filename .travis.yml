@@ -16,6 +16,10 @@ addons:
    - g++-7
 before_install:
    - sudo apt-get install libsfml-dev
+   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+   - sudo apt-get update -qq
+   - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev
+   - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 
 
 script:
@@ -30,9 +34,8 @@ script:
  #- cd hello_world_application
   
   
-  - cmake -H. -B_build
+  - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
   - cmake --build _build
-  - cmake --build _build --target hello_world
-  - ./_build/main
+  - cmake --build _build --target install
   - echo "Main application testing is done"
  
