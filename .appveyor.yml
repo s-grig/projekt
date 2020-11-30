@@ -44,7 +44,7 @@ build_script:
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
-  - build\Debug\main.exe
+#  - build\Debug\main.exe
   - echo "Testing main is done"
  
 #artifacts:
