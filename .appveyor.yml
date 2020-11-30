@@ -12,17 +12,7 @@ configuration:
 cache:
   - c:\Tools\vcpkg\installed
   #cache: c:\tools\vcpkg\installed\
-
-init:
-  - set TARGET_PLATFORM=
-  - if "%platform%"=="x86" ( set TARGET_PLATFORM=Win32)
-  - if "%platform%"=="x64" ( set TARGET_PLATFORM=x64)
-  - if "%platform%"=="ARM" ( set TARGET_PLATFORM=ARM)
-  - echo %TARGET_PLATFORM%
-  - echo %APPVEYOR_BUILD_WORKER_IMAGE%
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( set "generator=Visual Studio 16 2019" && set "toolset=v142" )
-  - echo %generator%
-  - echo %toolset%
+ 
 
 matrix:
     fast_finish: false
@@ -31,7 +21,8 @@ install:
   - cmake --version
     
   - cd C:\Tools\vcpkg
-  
+
+   
     #- cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=c:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake
     #- cmake --build _build  
     #- cmake --build _build --target main   
@@ -47,12 +38,20 @@ install:
   - cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
   - ps: Start-FileDownload 'https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata'
 
+
 build_script:
-  - cd C:\projects\projekt
-  - mkdir build
-  - cd build
-  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-  - cmake --build .
+  - cmd: cmake -H. -B_build .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
+  - cmd: cmake --build _build --config Release
+  - cmd: cd _build
+  - cmd: ls
+ # - cmd: cpack -G NSIS 
+  - cmd: cd ..
+
+#  - cd C:\projects\projekt
+#  - mkdir build
+#  - cd build
+#  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
+#  - cmake --build .
  # - .\Debug\main.exe
   - echo "Testing main is done"
  
