@@ -37,7 +37,8 @@ script:
 
   #- cmake -DSFML_DIR=/usr/share/SFML -DCMAKE_INSTALL_PREFIX=/usr/share/SFML/cmake/Modules ../
   - cmake -H. -B_build
-  - cmake --build _build --target install
+  - cmake --build _build
   - cmake --build .
+  #--target install
   - echo "Main application testing is done"
  
