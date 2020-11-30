@@ -38,7 +38,7 @@ script:
  
   - cd ~/s-grig/projekt
   - mkdir build && cd build
-  - cmake ..
+  - cmake ..-DCMAKE_INSTALL_PREFIX=/usr/share/SFML/cmake/Modules ../
   - cmake --build . 
   
   - echo "Main application testing is done"
