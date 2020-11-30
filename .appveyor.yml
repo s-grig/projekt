@@ -66,9 +66,9 @@ build_script:
 
 artifacts:
   - path: ./build/*.exe
-    name: projekt 
+    name: main 
 #description: 'Release description'
 deploy:
  - provider: GitHub
-             secure:9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
-#description: 'PROJEKT'   
+ - my_variable:
+      secure: 9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
