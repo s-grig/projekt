@@ -40,18 +40,11 @@ install:
 
 
 build_script:
-  - cmd: cmake -H. -B_build -DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake
-  - cmd: cmake --build _build --config Release
-  - cmd: cd _build
-  - cmd: ls
- # - cmd: cpack -G NSIS 
-  - cmd: cd ..
-
 #  - cd C:\projects\projekt
-#  - mkdir build
-#  - cd build
-#  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-#  - cmake --build .
+  - mkdir build
+  - cd build
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
+  - cmake --build .
  # - .\Debug\main.exe
   - echo "Testing main is done"
  
