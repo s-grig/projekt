@@ -70,5 +70,5 @@ artifacts:
 #description: 'Release description'
 deploy:
 - provider: GitHub
-    secure:9oFuHJzS3W6jeFKh/jb8gP+wLFNKohKO14ng8sCv7IQ4SBRw1hgXkYKwZp1+DIwQ
-   
+      secure:4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+
