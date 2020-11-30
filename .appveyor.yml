@@ -65,10 +65,10 @@ build_script:
 
 
 artifacts:
-  - path: ./build/*.exe
-    name: main 
+  - path: /.*\.exe/
 #description: 'Release description'
 deploy:
 - provider: GitHub
-      secure:4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+      auth_token:4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
+# secure:4eNoT+yTLxpGzeIImR7BnXuT7qtSaBU7rpSgYzjBfV32AccBYxSaZEYboOKC4bko
 
