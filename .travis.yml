@@ -35,10 +35,10 @@ script:
   - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
   - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
 
-  #- cmake -DSFML_DIR=/usr/share/SFML -DCMAKE_INSTALL_PREFIX=/usr/share/SFML/cmake/Modules ../
-  - cmake -H. -B_build
+ 
+  - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
   - cmake --build _build
-  - cmake --build .
-  #--target install
+  - cmake --build _build --target install
+  
   - echo "Main application testing is done"
  
