@@ -8,14 +8,11 @@ configuration:
     - Debug
     - Release
 
-
-
 matrix:
     fast_finish: false
 
 install:
   - cmake --version
-    
   - cd C:\Tools\vcpkg
   - git pull
   - .\bootstrap-vcpkg.bat              
