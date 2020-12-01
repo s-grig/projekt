@@ -47,7 +47,7 @@ script:
   - git clone https://github.com/microsoft/vcpkg
   - cd vcpkg
   - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
-  - unzip vcpkg-export-20201130-003734.7z
+  - unzip vcpkg-export-20201130-003734.zip
 
   - ./vcpkg/bootstrap-vcpkg.sh
   #- cd vcpkg 
@@ -75,6 +75,7 @@ script:
   - ls
   
   - mkdir build && cd build
+  - cmake ..
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=/home/travis/build/s-grig/projekt/vcpkg/vcpkg-export-20201130-003734/scripts/buildsystems/vcpkg.cmake"
   #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../"
   - cmake --build .
