@@ -5,8 +5,8 @@ compiler:
  - clang
 env:
     # список переменных окружени€, вли€ющих на матрицу сборки:
-    - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
-    - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
+    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
     #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 addons:
@@ -72,8 +72,8 @@ script:
   
   - mkdir build && cd build
   - cmake ..
-  - cmake .. -DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../
-  - cmake --build build --target install
+  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../"
+  - cmake --build --target install
   - cmake --build .
   - echo "Main application testing is done"
  
