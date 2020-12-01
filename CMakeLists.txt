@@ -14,6 +14,41 @@ set(CMAKE_AUTOMOC ON)
 
 project(kp)
 
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
+
+	message("-- Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
+	add_definitions(/W4)
+
+elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL AppleClang)
+
+	message("Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -stdlib=libc++")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.7")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+
+elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL Clang)
+
+	message("-- Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -stdlib=libc++")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+
+elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
+
+	message("-- Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+
+else ()
+
+	message(FATAL_ERROR "<${PROJECT}> Unknown compiler")
+
+endif ()
+
+
+
+
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
 
 find_package(Tesseract CONFIG REQUIRED)
