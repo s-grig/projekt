@@ -35,8 +35,8 @@ build_script:
 #  - build\Debug\main.exe
   - echo "Testing main is done"
  
-#artifacts:
-# - path: /.*\.nupkg/
+artifacts:
+ - path: /.*\.nupkg/
  
 #deploy:
 #- provider: GitHub
