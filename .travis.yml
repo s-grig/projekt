@@ -43,7 +43,7 @@ script:
   - ls
   - qmake --version
   - cmake --version
-  - tesseract --version
+  
  # - git clone https://github.com/microsoft/vcpkg
  #- cd vcpkg
  # - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
@@ -78,12 +78,12 @@ script:
   - cd tesseract
   - ./autogen.sh
   - ./configure
-  - make
-  - sudo make install
+  - sudo make && sudo make install
   - sudo ldconfig
   - cd ..
   - cd ..
-  
+  - tesseract --version
+
   - mkdir build && cd build
   - cmake ..
   #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=/home/travis/build/s-grig/projekt/vcpkg/vcpkg-export-20201130-003734/scripts/buildsystems/vcpkg.cmake"
