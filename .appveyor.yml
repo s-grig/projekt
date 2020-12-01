@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 image: Visual Studio 2019 
 platform:
- # - x86
+  - x86
   - x64
 configuration:
     # ... и в дебажной, и в релизной конфигурациях ...
