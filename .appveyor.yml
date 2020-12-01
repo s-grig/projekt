@@ -14,11 +14,11 @@ matrix:
 install:
   - cmake --version
   - cd C:\Tools\vcpkg
-  - git pull
-  - .\bootstrap-vcpkg.bat              
+  #- git pull
+  #- .\bootstrap-vcpkg.bat              
   - cd %APPVEYOR_BUILD_FOLDER%
   - vcpkg list
-  - vcpkg install sfml sfml:x64-windows tesseract:x64-windows qt5-imageformats:x64-windows
+  - vcpkg install sfml tesseract qt5-imageformats
   - vcpkg integrate install
   - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
   - 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
