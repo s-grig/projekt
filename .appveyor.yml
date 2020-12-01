@@ -17,6 +17,11 @@ install:
   - cmake --version
     
   - cd C:\Tools\vcpkg
+  - git pull
+  - .\bootstrap-vcpkg.bat              
+  - cd vcpkg
+  - vcpkg install sfml sfml:x64-windows tesseract:x64-windows qt5-imageformats:x64-windows
+  - vcpkg integrate install
   - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
   - 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
   - cd c:\tools\vcpkg
@@ -33,7 +38,12 @@ build_script:
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
 #  - build\Debug\main.exe
-  - echo "Testing main is done"
+  - echo "Testing1 main is done"
+  - cd ..
+  - mkdir _build
+  - cd _build
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  - cmake --build .
  
 artifacts:
  - path: /.*\.nupkg/

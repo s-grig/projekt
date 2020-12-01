@@ -3,6 +3,7 @@ language: cpp
 compiler:
  - gcc
  - clang
+cache: ccache
 #env:
     # список переменных окружени€, вли€ющих на матрицу сборки:
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
