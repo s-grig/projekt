@@ -3,7 +3,7 @@ language: cpp
 compiler:
  - gcc
  - clang
-env:
+#env:
     # список переменных окружени€, вли€ющих на матрицу сборки:
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
@@ -18,7 +18,7 @@ addons:
    - cmake
    - cmake-data
    - clang-5.0
-   - g++-6
+   - g++-7
 before_install:
    #- sudo apt-get install libsfml-dev -y
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
@@ -73,7 +73,6 @@ script:
   - mkdir build && cd build
   - cmake ..
   - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../"
-  - cmake --build --target install
   - cmake --build .
   - echo "Main application testing is done"
  
