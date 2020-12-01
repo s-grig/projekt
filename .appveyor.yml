@@ -19,7 +19,7 @@ install:
   - cd C:\Tools\vcpkg
   - git pull
   - .\bootstrap-vcpkg.bat              
-  - cd vcpkg
+  - cd %APPVEYOR_BUILD_FOLDER%
   - vcpkg install sfml sfml:x64-windows tesseract:x64-windows qt5-imageformats:x64-windows
   - vcpkg integrate install
   - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
