@@ -27,7 +27,8 @@ before_install:
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
    - sudo apt-get install tesseract-ocr
    - sudo apt-get install libtesseract-dev
-   - pkg-config --cflags --libs tesseract
+   - sudo apt install libopencv-dev -y
+#   - pkg-config --cflags --libs tesseract
    - sudo apt install qt5-default
 
 
@@ -72,6 +73,7 @@ script:
   - mkdir build && cd build
   - cmake -DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../
   - cmake ..
+  - cmake --build _build --target install
   - cmake --build .
   - echo "Main application testing is done"
  
