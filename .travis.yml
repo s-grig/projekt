@@ -25,7 +25,7 @@ before_install:
    - sudo apt-get update -qq
    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-   - sudo apt-get install tesseract-ocr
+   #- sudo apt-get install tesseract-ocr
    - sudo apt-get install libtesseract-dev
    - sudo apt install libopencv-dev -y
 #   - pkg-config --cflags --libs tesseract
@@ -73,6 +73,16 @@ script:
   - ls
   - cd ..
   - ls
+  - mkdir -p tesseract_s && cd tesseract_s
+  - git clone https://github.com/tesseract-ocr/tesseract.git
+  - cd tesseract
+  - ./autogen.sh
+  - ./configure
+  - make
+  - sudo make install
+  - sudo ldconfig
+  - cd ..
+  - cd ..
   
   - mkdir build && cd build
   - cmake ..
