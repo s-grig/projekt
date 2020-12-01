@@ -77,6 +77,7 @@ script:
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
   - ./autogen.sh
+  - autoreconf -i
   - ./configure
   - sudo make && sudo make install
   - sudo ldconfig
@@ -87,7 +88,7 @@ script:
   - mkdir build && cd build
   - cmake ..
   #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=/home/travis/build/s-grig/projekt/vcpkg/vcpkg-export-20201130-003734/scripts/buildsystems/vcpkg.cmake"
-  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../"
+  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/sfml/SFML-2.5.1 -DCMAKE_INSTALL_PREFIX=/home/travis/build/s-grig/projekt ../"
   - cmake --build .
   - echo "Main application testing is done"
  
