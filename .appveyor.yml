@@ -2,7 +2,7 @@ version: 1.0.{build}
 
 image: Visual Studio 2019 
 platform:
-  - x86
+  #- x86
   - x64
 configuration:
     - Debug
@@ -20,6 +20,7 @@ install:
   - git pull
   - .\bootstrap-vcpkg.bat              
   - cd %APPVEYOR_BUILD_FOLDER%
+  - vcpkg list
   - vcpkg install sfml sfml:x64-windows tesseract:x64-windows qt5-imageformats:x64-windows
   - vcpkg integrate install
   - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
