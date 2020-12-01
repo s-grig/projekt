@@ -47,7 +47,7 @@ script:
   - git clone https://github.com/microsoft/vcpkg
   - cd vcpkg
   - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.7z
-  - 7z x vcpkg-export-20201130-003734.7z
+  - unzip vcpkg-export-20201130-003734.7z
 
   - ./vcpkg/bootstrap-vcpkg.sh
   #- cd vcpkg 
