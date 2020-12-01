@@ -49,7 +49,7 @@ script:
  # - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
  # - unzip vcpkg-export-20201130-003734.zip
 
-  - ./vcpkg/bootstrap-vcpkg.sh
+ # - ./vcpkg/bootstrap-vcpkg.sh
   - cd vcpkg 
   - ./vcpkg list
   - ./vcpkg install sfml tesseract 
@@ -71,8 +71,8 @@ script:
   - sudo make && sudo make install
   - cd ..
   - ls
-  - cd ..
-  - ls
+  #- cd ..
+  #- ls
   
   - mkdir build && cd build
   - cmake ..
