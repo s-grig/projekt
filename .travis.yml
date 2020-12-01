@@ -46,7 +46,7 @@ script:
   - tesseract --version
   - git clone https://github.com/microsoft/vcpkg
   - cd vcpkg
-  - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.7z
+  - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
   - unzip vcpkg-export-20201130-003734.7z
 
   - ./vcpkg/bootstrap-vcpkg.sh
