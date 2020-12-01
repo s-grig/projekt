@@ -79,7 +79,7 @@ script:
   - cd leptonica-1.80.0
   - ./configure
   - sudo make install
-  - make check
+  - sudo make check
   - cd ..
 
   - mkdir -p tesseract_s && cd tesseract_s
