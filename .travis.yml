@@ -99,7 +99,7 @@ script:
   - tesseract --version
 
   - mkdir build && cd build
-  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake"
+  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/"
   - cmake ..
   - cmake --build .
   - echo "Main application testing is done"
