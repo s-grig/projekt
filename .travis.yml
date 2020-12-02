@@ -5,7 +5,7 @@ compiler:
  - clang
 cache: ccache
 #env:
-    # список переменных окружения, влияющих на матрицу сборки:
+    # Г±ГЇГЁГ±Г®ГЄ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»Гµ Г®ГЄГ°ГіГ¦ГҐГ­ГЁГї, ГўГ«ГЁГїГѕГ№ГЁГµ Г­Г  Г¬Г ГІГ°ГЁГ¶Гі Г±ГЎГ®Г°ГЄГЁ:
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
     #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
@@ -89,9 +89,12 @@ script:
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
   - ./autogen.sh
-  - autoreconf -i
-  - ./configure
-  - sudo make && sudo make install
+  - export LIBLEPT_HEADERSDIR=/local/include
+  - ./configure --with-extra-libraries=/local/lib
+  - make install
+  #- autoreconf -i
+  #- ./configure
+  #- sudo make && sudo make install
   - sudo ldconfig
   - cd ..
   - cd ..
