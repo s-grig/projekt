@@ -18,12 +18,12 @@ project(kp)
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
 
-find_package(Tesseract CONFIG REQUIRED)
+find_package(tesseract CONFIG REQUIRED)
 
 find_package(Qt5Gui CONFIG REQUIRED)
 
 find_package(Qt5Widgets CONFIG REQUIRED)
-find_package(Leptonica REQUIRED)
+find_package(Leptonica CONFIG REQUIRED)
 
 #-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
