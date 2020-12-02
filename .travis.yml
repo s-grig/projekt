@@ -35,12 +35,12 @@ before_install:
    - sudo apt-get install libgtk2.0-dev -y
    - sudo apt-get install tree
 
-   - sudo apt-get install autoconf automake libtool
+   #- sudo apt-get install autoconf automake libtool
    - sudo apt-get install pkg-config
-   - sudo apt-get install libpng-dev
-   - sudo apt-get install libjpeg8-dev
-   - sudo apt-get install libtiff5-dev
-   - sudo apt-get install zlib1g-dev
+   #- sudo apt-get install libpng-dev
+   #- sudo apt-get install libjpeg8-dev
+   #- sudo apt-get install libtiff5-dev
+   #- sudo apt-get install zlib1g-dev
 
 
 script:
@@ -97,9 +97,6 @@ script:
   ##- mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
-
-
-
 
   - ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
