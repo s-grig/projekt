@@ -120,8 +120,8 @@ script:
   - find  / -name "tesseract-config*" -print 2>/dev/null
   #- tree
   - mkdir build && cd build
-  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates/"
-  #- cmake ..
+  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates/"
+  - cmake ..
   - cmake --build .
   - echo "Main application testing is done"
  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
