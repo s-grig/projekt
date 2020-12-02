@@ -104,6 +104,9 @@ script:
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/"
+  - find / -name  "*onfig.cmake" -print
+  - find  / -name "TesseractConfig*" -print
+  - find  / -name "tesseract-config*" -print
   - mkdir build && cd build
   - cmake .. -DCMAKE_PREFIX_PATH=/usr/local/share/
   - cmake --build .
