@@ -95,8 +95,8 @@ script:
   - sudo ldconfig
   - cd ..
   - cd ..
-  - export TESSDATA_PREFIX=/usr/local/share/
-  - export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
+  #- export TESSDATA_PREFIX=/usr/local/share/
+  #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   - tesseract --version
 
   - mkdir build && cd build
