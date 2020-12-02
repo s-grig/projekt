@@ -101,6 +101,7 @@ script:
   - cd ..
   - cd ..
   - ls
+  - export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/tessdata
   #- export TESSDATA_PREFIX=/usr/local/share/
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   - tesseract --version
