@@ -87,7 +87,7 @@ script:
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xvzf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
-  - autoreconf -i
+  - autoreconf --install --force
   - ./configure
   - sudo make install
   - sudo make check
@@ -101,7 +101,7 @@ script:
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
   #- make install
-  #- autoreconf -i
+  - autoreconf --install --force
   - ./configure
   - sudo make install
   - sudo ldconfig
@@ -120,7 +120,7 @@ script:
   - find  / -name "tesseract-config*" -print 2>/dev/null
   #- tree
   - mkdir build && cd build
-  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates/"
+  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
   - cmake ..
   - cmake --build .
   - echo "Main application testing is done"
