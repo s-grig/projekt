@@ -79,11 +79,13 @@ script:
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xvzf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
-  - autoreconf -i
-  - ./configure
-  - sudo make install
-  - sudo make check
-  - cd ..
+  - cmake .. -DBUILD_PROG=1
+  - make
+  #- autoreconf -i
+  #- ./configure
+  #- sudo make install
+  #- sudo make check
+  #- cd ..
 
   - mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
