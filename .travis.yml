@@ -87,7 +87,7 @@ script:
   - cd ..
   - ls
 
-  - mkdir -p tesseract_s && cd tesseract_s
+  ##- mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
   - ./autogen.sh
@@ -99,9 +99,9 @@ script:
   - sudo make install
   - sudo ldconfig
   - cd ..
-  - cd ..
+  ##- cd ..
   - ls
-  - export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/tessdata
+  - export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/tessdata
   #- export TESSDATA_PREFIX=/usr/local/share/
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   - tesseract --version
