@@ -96,7 +96,7 @@ script:
   #- make install
   #- autoreconf -i
   - ./configure
-  - sudo make && sudo make install
+  - sudo make install
   - sudo ldconfig
   - cd ..
   - cd ..
