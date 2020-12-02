@@ -89,12 +89,12 @@ script:
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
   - ./autogen.sh
-  - export LIBLEPT_HEADERSDIR=/local/include
-  - ./configure --with-extra-libraries=/local/lib
-  - make install
+  #- export LIBLEPT_HEADERSDIR=/local/include
+  #- ./configure --with-extra-libraries=/local/lib
+  #- make install
   #- autoreconf -i
-  #- ./configure
-  #- sudo make && sudo make install
+  - ./configure
+  - sudo make && sudo make install
   - sudo ldconfig
   - cd ..
   - cd ..
