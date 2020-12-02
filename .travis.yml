@@ -85,6 +85,7 @@ script:
   - sudo make install
   - sudo make check
   - cd ..
+  - ls
 
   - mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
@@ -99,6 +100,7 @@ script:
   - sudo ldconfig
   - cd ..
   - cd ..
+  - ls
   #- export TESSDATA_PREFIX=/usr/local/share/
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   - tesseract --version
@@ -108,7 +110,7 @@ script:
   - find  / -name "tesseract-config*" -print 2>/dev/null
   - tree
   - mkdir build && cd build
-  - cmake .. -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
+  - cmake .. -DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   #- cmake ..
   - cmake --build .
   - echo "Main application testing is done"
