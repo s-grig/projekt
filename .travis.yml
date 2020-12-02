@@ -108,9 +108,9 @@ script:
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
   - find  / -name "tesseract-config*" -print 2>/dev/null
-  - tree
+  #- tree
   - mkdir build && cd build
-  - cmake .. -DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
+  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates/"
   #- cmake ..
   - cmake --build .
   - echo "Main application testing is done"
