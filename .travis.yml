@@ -79,12 +79,10 @@ script:
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xvzf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
-  - cmake .. -DBUILD_PROG=1
-  - make
-  #- autoreconf -i
-  #- ./configure
-  #- sudo make install
-  #- sudo make check
+  - autoreconf -i
+  - ./configure
+  - sudo make install
+  - sudo make check
   #- cd ..
 
   - mkdir -p tesseract_s && cd tesseract_s
@@ -104,12 +102,12 @@ script:
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
   - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/"
-  - find / -name  "*onfig.cmake" -print
-  - find  / -name "TesseractConfig*" -print
-  - find  / -name "tesseract-config*" -print
+  - find / -name  "*onfig.cmake" -print 2>/dev/null
+  - find  / -name "TesseractConfig*" -print 2>/dev/null
+  - find  / -name "tesseract-config*" -print 2>/dev/null
   - tree
   - mkdir build && cd build
-  - cmake .. -DCMAKE_PREFIX_PATH=/usr/local/share/
+  - cmake ..
   - cmake --build .
   - echo "Main application testing is done"
- 
+ #  -DCMAKE_PREFIX_PATH=/usr/local/share/
