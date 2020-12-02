@@ -35,7 +35,7 @@ build_script:
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
 #  - build\Debug\main.exe
-  - echo "Testing1 main is done"
+  - echo "Testing_1 main is done"
   #- cd ..
   #- mkdir _build
   #- cd _build
@@ -43,7 +43,7 @@ build_script:
   #- cmake --build .
  
 artifacts:
- - path: /.*\.nupkg/
+ - path: /.*\.exe/
  
 #deploy:
 #- provider: GitHub
