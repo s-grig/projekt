@@ -14,39 +14,6 @@ set(CMAKE_AUTOMOC ON)
 
 project(kp)
 
-if (${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
-
-	message("-- Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
-	add_definitions(/W4)
-
-elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL AppleClang)
-
-	message("Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -stdlib=libc++")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.7")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
-
-elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL Clang)
-
-	message("-- Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -stdlib=libc++")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
-
-elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
-
-	message("-- Building <${PROJECT}> for <${CMAKE_CXX_COMPILER_ID}> compiler")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
-
-else ()
-
-	message(FATAL_ERROR "<${PROJECT}> Unknown compiler")
-
-endif ()
-
-
 
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
@@ -72,8 +39,9 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 #set_target_properties(main PROPERTIES AUTOMOC TRUE)
 
 #target_link_libraries(MY_TARGET_NAME Tesseract::libtesseract)
+#${Tesseract_LIBRARIES}
 
-target_link_libraries(main PRIVATE ${Tesseract_LIBRARIES})
+target_link_libraries(main PRIVATE libtesseract)
 
 target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network)
 
