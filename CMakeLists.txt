@@ -21,7 +21,7 @@ find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
 #find_package(Leptonica CONFIG REQUIRED)
 ##find_package(Tesseract CONFIG REQUIRED)
-find_package(Tesseract 4.1.1 REQUIRED) # 4.1.1 is currently the latest version of the git repository.
+find_package(Tesseract REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 
 #-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
