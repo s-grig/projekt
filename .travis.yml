@@ -28,7 +28,7 @@ before_install:
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
    #- sudo apt-get install tesseract-ocr
    #- sudo apt install libleptonica-dev
-   - sudo apt-get install libtesseract-dev
+   #- sudo apt-get install libtesseract-dev
    - sudo apt install libopencv-dev -y
 #   - pkg-config --cflags --libs tesseract
    - sudo apt install qt5-default
