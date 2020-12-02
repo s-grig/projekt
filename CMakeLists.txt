@@ -56,6 +56,7 @@ find_package(Tesseract CONFIG REQUIRED)
 find_package(Qt5Gui CONFIG REQUIRED)
 
 find_package(Qt5Widgets CONFIG REQUIRED)
+find_package(Leptonica REQUIRED)
 
 #-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
@@ -67,7 +68,10 @@ ${CMAKE_CURRENT_SOURCE_DIR}/source/ui.cpp)
 target_include_directories(main
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+
 #set_target_properties(main PROPERTIES AUTOMOC TRUE)
+
+#target_link_libraries(MY_TARGET_NAME Tesseract::libtesseract)
 
 target_link_libraries(main PRIVATE ${Tesseract_LIBRARIES})
 
