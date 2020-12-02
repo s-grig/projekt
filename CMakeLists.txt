@@ -19,7 +19,7 @@ project(kp)
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
 find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
-find_package(Leptonica CONFIG REQUIRED)
+#find_package(Leptonica CONFIG REQUIRED)
 ##find_package(Tesseract CONFIG REQUIRED)
 find_package(Tesseract 4.1.1 REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 

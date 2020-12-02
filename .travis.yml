@@ -122,8 +122,8 @@ script:
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
   - find  / -name "tesseract-config*" -print 2>/dev/null
-  - tree
-  - tree -P '*esseract*' --prune
+  ##- tree
+  ##- tree -P '*esseract*' --prune
   - mkdir build && cd build
   #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
   - cmake ..
