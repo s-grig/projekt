@@ -17,13 +17,10 @@ project(kp)
 
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
-
-find_package(tesseract CONFIG REQUIRED)
-
 find_package(Qt5Gui CONFIG REQUIRED)
-
 find_package(Qt5Widgets CONFIG REQUIRED)
 find_package(Leptonica CONFIG REQUIRED)
+find_package(Tesseract CONFIG REQUIRED)
 
 #-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
@@ -41,7 +38,7 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 #target_link_libraries(MY_TARGET_NAME Tesseract::libtesseract)
 #${Tesseract_LIBRARIES}
 
-target_link_libraries(main PRIVATE ${Tesseract_LIBRARIES})
+target_link_libraries(main PRIVATE libtesseract)
 
 target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network)
 
