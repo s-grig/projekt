@@ -99,7 +99,7 @@ script:
   - cd ..
   - cd ..
   #- export TESSDATA_PREFIX=/usr/local/share/
-  #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/templates
+  - export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract
   - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/"
   - find / -name  "*onfig.cmake" -print 2>/dev/null
