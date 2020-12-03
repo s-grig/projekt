@@ -21,7 +21,7 @@ project(${PROJECT_NAME} CXX)
 
 
 # Include subdirectories
-#include("file/tessdata/eng.traineddata")
+
 #include("tools/gate/cmake/HunterGate.cmake")
 
 # Include directories
