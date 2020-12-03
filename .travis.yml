@@ -5,7 +5,7 @@ compiler:
  - clang
 cache: ccache
 #env:
-    # ñïèñîê ïåðåìåííûõ îêðóæåíèÿ, âëèÿþùèõ íà ìàòðèöó ñáîðêè:
+   
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
     #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
@@ -29,10 +29,19 @@ before_install:
    #- sudo apt-get install tesseract-ocr
    #- sudo apt install libleptonica-dev
    #- sudo apt-get install libtesseract-dev
-   - sudo apt install libopencv-dev -y
+   #- sudo apt install libopencv-dev -y
 #   - pkg-config --cflags --libs tesseract
    - sudo apt install qt5-default
    - sudo apt-get install libgtk2.0-dev -y
+   - sudo apt-get install tree
+   
+   #- sudo apt-get install autoconf automake libtool
+   - sudo apt-get install pkg-config
+   #- sudo apt-get install libpng-dev
+   #- sudo apt-get install libjpeg8-dev
+   #- sudo apt-get install libtiff5-dev
+   #- sudo apt-get install zlib1g-dev
+   - sudo apt-get install libtool-bin
 
 
 script:
@@ -44,9 +53,7 @@ script:
   #- export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
   #- wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   - ls
-  - qmake --version
-  - cmake --version
-  
+    
  # - git clone https://github.com/microsoft/vcpkg
  #- cd vcpkg
  # - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
@@ -79,35 +86,45 @@ script:
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xvzf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
-  - autoreconf -i
+  #- autoreconf --install --force
   - ./configure
   - sudo make install
   - sudo make check
-  #- cd ..
+  - cd ..
+  - ls
 
-  - mkdir -p tesseract_s && cd tesseract_s
+  ##- mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
+
   - ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
   #- make install
-  #- autoreconf -i
+  - autoreconf --install --force
   - ./configure
-  - sudo make && sudo make install
+  - sudo make install
   - sudo ldconfig
+  - make training
+  - sudo make training-install
   - cd ..
-  - cd ..
+  ##- cd ..
+  - ls
+  - export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/tessdata
   #- export TESSDATA_PREFIX=/usr/local/share/
   - export Tesseract_DIR=/home/travis/build/s-grig/projekt/tesseract
+  
   - tesseract --version
-  #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract_s/tesseract/cmake/"
+  #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
   - find  / -name "tesseract-config*" -print 2>/dev/null
-  - tree
+  ##- tree
+  ##- tree -P '*esseract*' --prune
   - mkdir build && cd build
-  - cmake ..
+  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
+  - cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
   - cmake --build .
   - echo "Main application testing is done"
  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
+ # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
