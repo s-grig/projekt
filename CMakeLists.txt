@@ -16,8 +16,8 @@ set(Tesseract_DIR "/usr/local/lib/cmake")
 #  SHA1 "e14bc153a7f16d6a5eeec845fb0283c8fad8c358"  
 #)
 
-set(PROJECT_NAME "KP")
-project(${PROJECT_NAME} CXX)
+
+project(projekt)
 
 
 # Include subdirectories
