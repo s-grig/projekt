@@ -32,7 +32,7 @@ include_directories(${Tesseract_INCLUDE_DIRS})     # you
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
 find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
-#find_package(Leptonica CONFIG REQUIRED)
+find_package(Leptonica CONFIG REQUIRED)
 ##find_package(Tesseract CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 
@@ -60,4 +60,5 @@ target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
 
 target_link_libraries(main PRIVATE ${Qt5Widgets_LIBRARIES})
 
+target_link_libraries(main PRIVATE ${Leptonica_LIBRARIES})
 
