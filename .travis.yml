@@ -102,16 +102,17 @@ script:
   - cmake ../
   - make
   - sudo make install
+  - cd ..
   ###- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
   #- make install
   ###- autoreconf --install --force
   ###- ./configure
-  ##- sudo make install
+  ###- sudo make install
   - sudo ldconfig
-  ##- make training
-  ##- sudo make training-install
+  ###- make training
+  ###- sudo make training-install
   - cd ..
   ##- cd ..
   - ls
