@@ -18,7 +18,7 @@ install:
   #- git pull
   #- .\bootstrap-vcpkg.bat              
   #- cd %APPVEYOR_BUILD_FOLDER%
-  - vcpkg list
+  cmd: vcpkg list
   #- vcpkg install sfml tesseract qt5-imageformats
   #- vcpkg integrate install
   cmd: ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
@@ -37,7 +37,7 @@ build_script:
   cmd: cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   cmd: cmake --build .
 #  - build\Debug\main.exe
-  - echo "Testing_1 main is done"
+  cmd: echo "Testing_1 main is done"
   #- cd ..
   #- mkdir _build
   #- cd _build
