@@ -111,7 +111,7 @@ script:
   - cd ..
   ##- cd ..
   - ls
-  - export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
+  #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
   #- export TESSDATA_PREFIX=/usr/local/share/
   - export Tesseract_DIR=/home/travis/build/s-grig/projekt/
   
@@ -125,6 +125,8 @@ script:
   - mkdir build && cd build
   #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
   # "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/"
+  #cmake -Draspicam_DIR=<dir>
+  - cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract
   - cmake -H. -B.build
   - cmake --build . --target
   - echo "Main application testing is done"
