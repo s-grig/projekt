@@ -19,6 +19,7 @@ int main(int argc, char* argv[]) {
     }
     catch (std::exception& err) {
         std::cout << err.what() << std::endl;
+ //       system("pause");
         return 1;
     }
 }
