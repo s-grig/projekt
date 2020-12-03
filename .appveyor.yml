@@ -1,7 +1,8 @@
 version: 1.0.{build}  
 
-image: Visual Studio 2019 
-image: Ubuntu
+image: 
+   - Visual Studio 2019 
+   - Ubuntu
 platform:
   #- x86
   - x64
