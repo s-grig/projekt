@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
-
+set(Tesseract_DIR "/usr/local/lib/cmake")
 
 #HunterGate(
 #  URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
@@ -37,7 +37,7 @@ find_package(Qt5Widgets CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 
 # 03-12-2020 00:20
-set(Tesseract_DIR "/usr/local/lib/cmake")
+
 
 # The main program
 

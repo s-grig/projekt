@@ -110,7 +110,7 @@ script:
   #cmake -Draspicam_DIR=<dir>
   - cmake .. "-DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract/build/cmake/"
   - cmake ..
-  - cmake --build . --target
+  - cmake --build .
   - echo "Main application testing is done"
  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
  # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
