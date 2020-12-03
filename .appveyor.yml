@@ -1,6 +1,7 @@
 version: 1.0.{build}  
 
 image: Visual Studio 2019 
+image: Ubuntu
 platform:
   #- x86
   - x64
@@ -12,28 +13,28 @@ matrix:
     fast_finish: false
 
 install:
-  - cd C:\Tools\vcpkg
+  cmd: cd C:\Tools\vcpkg
   #- git pull
   #- .\bootstrap-vcpkg.bat              
   #- cd %APPVEYOR_BUILD_FOLDER%
   - vcpkg list
   #- vcpkg install sfml tesseract qt5-imageformats
   #- vcpkg integrate install
-  - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
-  - 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
-  - cd c:\tools\vcpkg
-  - cd C:\  
-  - mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
-  - cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
-  - ps: Start-FileDownload 'https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata'
+  cmd: ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
+  cmd: 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
+  cmd: cd c:\tools\vcpkg
+  cmd: cd C:\  
+  cmd: mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+  cmd: cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+  cmd: ps: Start-FileDownload 'https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata'
 
 
 build_script:
-  - cd C:\projects\projekt
-  - mkdir build
-  - cd build
-  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-  - cmake --build .
+  cmd: cd C:\projects\projekt
+  cmd: mkdir build
+  cmd: cd build
+  cmd: cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
+  cmd: cmake --build .
 #  - build\Debug\main.exe
   - echo "Testing_1 main is done"
   #- cd ..
@@ -43,7 +44,7 @@ build_script:
   #- cmake --build .
  
 artifacts:
- - path: /.*\.exe/
+ cmd: path: /.*\.exe/
  
 #deploy:
 #- provider: GitHub
