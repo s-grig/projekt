@@ -18,11 +18,11 @@ install:
   #- git pull
   #- .\bootstrap-vcpkg.bat              
   #- cd %APPVEYOR_BUILD_FOLDER%
-  cmd: vcpkg list
+ vcpkg list
   #- vcpkg install sfml tesseract qt5-imageformats
   #- vcpkg integrate install
-  cmd: ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
-  cmd: 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
+   ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
+   7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
   cmd: cd c:\tools\vcpkg
   cmd: cd C:\  
   cmd: mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
