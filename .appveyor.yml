@@ -14,30 +14,30 @@ matrix:
     fast_finish: false
 
 install:
-  cmd: cd C:\Tools\vcpkg
+  - cd C:\Tools\vcpkg
   #- git pull
   #- .\bootstrap-vcpkg.bat              
   #- cd %APPVEYOR_BUILD_FOLDER%
- vcpkg list
+  - vcpkg list
   #- vcpkg install sfml tesseract qt5-imageformats
   #- vcpkg integrate install
-   ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
-   7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
-  cmd: cd c:\tools\vcpkg
-  cmd: cd C:\  
-  cmd: mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
-  cmd: cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
-  cmd: ps: Start-FileDownload 'https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata'
+  - ps: Start-FileDownload 'https://stasg.ru/tv/vcpkg-export-20201130-003734.7z'
+  - 7z x C:\Tools\vcpkg\vcpkg-export-20201130-003734.7z -o"C:\Tools\vcpkg\"
+  - cd c:\tools\vcpkg
+  - cd C:\  
+  - mkdir -p \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+  - cd \vcpkg\buildtrees\tesseract\src\4.1.1-3a7d5a1d2b.clean\tessdata
+  - ps: Start-FileDownload 'https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata'
 
 
 build_script:
-  cmd: cd C:\projects\projekt
-  cmd: mkdir build
-  cmd: cd build
-  cmd: cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-  cmd: cmake --build .
+  - cd C:\projects\projekt
+  - mkdir build
+  - cd build
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
+  - cmake --build .
 #  - build\Debug\main.exe
-  cmd: echo "Testing_1 main is done"
+  - echo "Testing_1 main is done"
   #- cd ..
   #- mkdir _build
   #- cd _build
@@ -45,7 +45,7 @@ build_script:
   #- cmake --build .
  
 artifacts:
- cmd: path: /.*\.exe/
+ - path: /.*\.exe/
  
 #deploy:
 #- provider: GitHub
