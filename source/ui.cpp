@@ -33,12 +33,12 @@ void Win::set_path(const QString& path_) {
 QString Win::get_path() {
     return path;
 }
-
+//C:\\DATA\\GitHub_Stas\\projekt\\file\\tessdata
 std::pair<std::string, std::string> Win::photo_processing() {
     std::string path_to_photo = get_path().toUtf8().constData();
     std::string outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
-    if (api->Init("./file/", "eng")) {
+    if (api->Init("..\\..\\..\\file\\tessdata", "eng")) {
         throw std::exception("Could not initialize tesseract.");
     }
     Pix* image = pixRead(path_to_photo.c_str());
