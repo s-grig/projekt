@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 # Specify minimum version
 set(MINIMUM_TESSERACT_VERSION 4.1.0)
-set(MINIMUM_LEPTONICA_VERSION 1.74)
+#set(MINIMUM_LEPTONICA_VERSION 1.74)
 
 
 set(CMAKE_CXX_STANDARD 17)            
@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
 set(Tesseract_DIR "/usr/local/lib/cmake")
-
+#set(Leptonica_DIR "/usr/local/lib/cmake")
 #HunterGate(
 #  URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
 #  SHA1 "e14bc153a7f16d6a5eeec845fb0283c8fad8c358"  
