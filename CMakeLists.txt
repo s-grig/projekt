@@ -34,7 +34,7 @@ find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
 #find_package(Leptonica CONFIG REQUIRED)
 ##find_package(Tesseract CONFIG REQUIRED)
-find_package(Tesseract REQUIRED) # 4.1.1 is currently the latest version of the git repository.
+find_package(Tesseract CONFIG REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 
 
 # The main program

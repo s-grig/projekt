@@ -85,6 +85,7 @@ script:
   - ls
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzf leptonica-1.80.0.tar.gz
+ # tar xzvf
   - cd leptonica-1.80.0
   #- autoreconf --install --force
   - ./configure
