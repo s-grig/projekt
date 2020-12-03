@@ -45,29 +45,7 @@ before_install:
 
 
 script:
-  - 
-  #- export TESSERACT_VERSION=4.0.0-1
-  #- export TESSERACT_INSTALL=$HOME/.tesseract
-  #- export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
-  #- export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
-  #- export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
-  #- wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
   - ls
-    
- # - git clone https://github.com/microsoft/vcpkg
- #- cd vcpkg
- # - wget https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
- # - unzip vcpkg-export-20201130-003734.zip
-
- # - ./vcpkg/bootstrap-vcpkg.sh
- # - cd vcpkg 
- # - ./vcpkg list
- # - ./vcpkg install sfml tesseract 
- # - ./vcpkg install qt5-imageformats
- # - ./vcpkg list
-#  - cd ..
-
-  #- cd home/travis/build/s-grig/projekt
   - mkdir sfml
   - cd sfml
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
@@ -124,14 +102,13 @@ script:
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
-  - find  / -name "tesseract-config*" -print 2>/dev/null
   ##- tree
   ##- tree -P '*esseract*' --prune
   - mkdir build && cd build
   #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
   # "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/"
   #cmake -Draspicam_DIR=<dir>
-  - cmake .. "-DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract"
+  - cmake .. "-DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract/build/cmake/"
   - cmake ..
   - cmake --build . --target
   - echo "Main application testing is done"
