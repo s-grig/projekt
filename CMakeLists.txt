@@ -36,6 +36,8 @@ find_package(Qt5Widgets CONFIG REQUIRED)
 ##find_package(Tesseract CONFIG REQUIRED)
 find_package(Tesseract CONFIG REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 
+# 03-12-2020 00:20
+set(Tesseract_DIR "/usr/local/lib/cmake")
 
 # The main program
 
