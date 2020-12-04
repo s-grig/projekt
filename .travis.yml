@@ -28,12 +28,11 @@ before_install:
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
   
 #   - pkg-config --cflags --libs tesseract
-   - sudo apt install qt5-default
+ #  - sudo apt install qt5-default
    - sudo apt-get install libgtk2.0-dev -y
    - sudo apt-get install tree
    
-   - sudo apt-get install autoconf automake
-    
+     
    - sudo apt-get install libtool-bin libtool-doc
    - sudo apt-get install ca-certificates
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
@@ -55,6 +54,9 @@ before_install:
    ################################################################
 script:
   - echo "$HOME"
+  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+  - export PKG_CONFIG = /usr/bin/pkg-config
+  - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzvf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
@@ -86,9 +88,7 @@ script:
 #  - sudo ldconfig
  # - cd ..
    
-  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-  - export PKG_CONFIG = /usr/bin/pkg-config
-  - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
+ 
 
   
   - mkdir build
