@@ -76,25 +76,25 @@ script:
   - ls
  ## - cd tesseract-4.1.1
   - cd tesseract
-  - ./autogen.sh
-  - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig     
-  - ./configure
+ # - ./autogen.sh
+ # - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig     
+ # - ./configure
   #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
  #- --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
  ### - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
-  - sudo make
+#  - sudo make
+ # - sudo make install
+#  - sudo ldconfig
+ # - cd ..
+
+  - mkdir build
+  - cd build
+  - cmake ../
+  - make
   - sudo make install
   - sudo ldconfig
   - cd ..
-
-  #- mkdir build
-  #- cd build
-  #- cmake ../
-  #- make
-  #- sudo make install
-  #- sudo ldconfig
-  #- cd ..
-  #- cd ..
+  - cd ..
   - ls
   - tesseract --version
   
