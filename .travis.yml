@@ -68,6 +68,7 @@ script:
     
   #- git clone https://github.com/tesseract-ocr/tesseract.git
   - wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
+  - ls
   - tar xzvf tesseract-4.1.1.tar.gz
   - cd tesseract-4.1.1
   - ./autogen.sh
