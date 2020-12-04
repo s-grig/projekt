@@ -60,7 +60,7 @@ script:
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzvf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
-  #- autoreconf --i
+  - autoreconf --i
   - ./configure
   ############--prefix=$HOME/local/
   - sudo make install
@@ -77,6 +77,7 @@ script:
   - cd tesseract-4.1.1
   - ./autogen.sh
   - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
+  - ./configure
   #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
  #- --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
  ### - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
