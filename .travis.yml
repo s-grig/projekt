@@ -61,7 +61,8 @@ script:
   - tar xzvf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
   #- autoreconf --i
-  - ./configure --prefix=$HOME/local/
+  - ./configure
+  ############--prefix=$HOME/local/
   - sudo make install
   - sudo make check
   - cd ..
@@ -78,7 +79,7 @@ script:
   - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
   #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
  #- --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
-  - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
+ ### - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
   - make
   - make install
   - cd ..
