@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 # Specify minimum version
 set(MINIMUM_TESSERACT_VERSION 4.1.0)
-set(MINIMUM_LEPTONICA_VERSION 1.74)
+#set(MINIMUM_LEPTONICA_VERSION 1.74)
 
 
 set(CMAKE_CXX_STANDARD 17)            
