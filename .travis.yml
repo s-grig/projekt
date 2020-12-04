@@ -73,9 +73,9 @@ script:
   - ls
 
   ##- mkdir -p tesseract_s && cd tesseract_s
-  - apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config
-  - apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
-  - apt-get install libpango1.0-dev
+  - sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config
+  - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
+  - sudo apt-get install libpango1.0-dev
 
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
