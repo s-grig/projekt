@@ -89,9 +89,6 @@ script:
   - export PKG_CONFIG = / usr / bin / pkg-config
   - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
 
-Также необходимо убедиться, что эти две переменные определены:
-
-
   - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
   - mkdir build
   - cd build
