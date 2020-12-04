@@ -21,18 +21,17 @@ addons:
    - clang-5.0
    - g++-7
 before_install:
-   #- sudo apt-get install libsfml-dev -y
+   ############ Qt5##############################################
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    - sudo apt-get update -qq
    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-  
+  ####################################################################
 #   - pkg-config --cflags --libs tesseract
  #  - sudo apt install qt5-default
    - sudo apt-get install libgtk2.0-dev -y
    - sudo apt-get install tree
-   
-     
+        
    - sudo apt-get install libtool-bin libtool-doc
    - sudo apt-get install ca-certificates
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
@@ -46,11 +45,13 @@ before_install:
    - sudo apt-get install libpango1.0-dev
    - sudo apt-get install libcairo2-dev
    
-  ################################################################ 
-   #- sudo apt install libleptonica-dev
-   #- sudo apt-get install tesseract-ocr
-   #- sudo apt-get install libtesseract-dev
-   #- sudo apt install libopencv-dev -y
+  ############################ SFML ############################### 
+   - sudo apt-get install libx11-dev libgl1-mesa-dev libudev-dev libfreetype6-dev libopenal-dev libflac-dev libvorbis-dev
+   - sudo aptitude install x11-xserver-utils -y
+   - sudo apt install libavcodec-dev libavformat-dev libswscale-dev -y
+   - sudo apt-get install xorg-dev -y
+   - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
+   - sudo make && sudo make install
    ################################################################
 script:
   - echo "$HOME"
@@ -64,11 +65,10 @@ script:
   - cd build
   - cmake ..
   - make 
-  
   - cd ..
   - ls
   - cd ..
-    
+  
   - git clone https://github.com/tesseract-ocr/tesseract.git
   ##- wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
   - ls /usr/local/lib/cmake
@@ -115,12 +115,7 @@ script:
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
   - unzip SFML-2.5.1-sources.zip
   - cd SFML-2.5.1
-  - sudo apt-get install libx11-dev libgl1-mesa-dev libudev-dev libfreetype6-dev libopenal-dev libflac-dev libvorbis-dev
-  - sudo aptitude install x11-xserver-utils -y
-  - sudo apt install libavcodec-dev libavformat-dev libswscale-dev -y
-  - sudo apt-get install xorg-dev -y
-  - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
-  - sudo make && sudo make install
+  
   - cd ..
   - ls
   - cd ..
