@@ -19,12 +19,6 @@ set(Leptonica_DIR "/usr/local/lib/cmake")
 
 project(projekt)
 
-find_package( PkgConfig REQUIRED)
-
-#pkg_search_module( TESSERACT REQUIRED tesseract )
-
-pkg_search_module( LEPTONICA REQUIRED lept )
-
 
 # Include subdirectories
 
