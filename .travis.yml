@@ -35,7 +35,7 @@ before_install:
    - sudo apt-get install autoconf automake libtool
     
    - sudo apt-get install libtool-bin libtool-doc
-   - sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config
+   - sudo apt-get install automake ca-certificates g++ git libtool make
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
    - sudo apt-get install libpango1.0-dev
    - sudo apt-get install pkg-config
@@ -51,7 +51,7 @@ before_install:
    #- sudo apt install libleptonica-dev
    #- sudo apt-get install tesseract-ocr
    #- sudo apt-get install libtesseract-dev
-   - sudo apt install libopencv-dev -y
+   #- sudo apt install libopencv-dev -y
    ################################################################
 script:
   - echo "$HOME"
