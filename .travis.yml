@@ -32,10 +32,10 @@ before_install:
    - sudo apt-get install libgtk2.0-dev -y
    - sudo apt-get install tree
    
-   - sudo apt-get install autoconf automake libtool
+   - sudo apt-get install autoconf automake
     
    - sudo apt-get install libtool-bin libtool-doc
-   - sudo apt-get install automake ca-certificates g++ git libtool make
+   - sudo apt-get install ca-certificates
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
    - sudo apt-get install libpango1.0-dev
    - sudo apt-get install pkg-config
@@ -69,7 +69,8 @@ script:
     
   - git clone https://github.com/tesseract-ocr/tesseract.git
   ##- wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
-  - ls
+  - ls /usr/local/lib/cmake
+  - ls /usr/local/lib/
   ##- tar xzvf 4.1.1.tar.gz
   - ls
  ## - cd tesseract-4.1.1
@@ -84,7 +85,14 @@ script:
  # - sudo make install
 #  - sudo ldconfig
  # - cd ..
+  - export PKG_CONFIG_PATH = / usr / local / lib / pkgconfig
+  - export PKG_CONFIG = / usr / bin / pkg-config
+  - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
 
+Также необходимо убедиться, что эти две переменные определены:
+
+
+  - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
   - mkdir build
   - cd build
   - cmake ../
