@@ -60,14 +60,18 @@ script:
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzvf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
-  - autoreconf --i
-  - ./configure
+  - mkdir build 
+  - cd build
+  - cmake .. -DBUILD_PROG = 1 
+  - make 
+  -  #- autoreconf --i
+  #- ./configure
   ############--prefix=$HOME/local/
-  - sudo make install
-  - sudo make check
+  #- sudo make install
+  #- sudo make check
   - cd ..
   - ls
-  
+  - cd ..
     
   - git clone https://github.com/tesseract-ocr/tesseract.git
   ##- wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz

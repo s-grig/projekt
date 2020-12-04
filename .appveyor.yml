@@ -35,7 +35,7 @@ build_script:
   - mkdir build
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
-  - cmake --build . --config Release
+  - cmake --build . --config Release --target package_source
  # - tree _install
  # - build/Release/main.exe
   - build\Debug\main.exe
