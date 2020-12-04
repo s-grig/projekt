@@ -125,7 +125,7 @@ script:
   # "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/"
   #cmake -Draspicam_DIR=<dir>
   #  "-DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract"
-  - cmake ..
+  
   - cmake ..
   - cmake --build . --target
   - echo "Main application testing is done"
