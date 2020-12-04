@@ -10,7 +10,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
 set(Tesseract_DIR "/usr/local/lib/cmake")
-set(Leptonica_DIR "/usr/local/lib/cmake/")
+
+set(Leptonica_DIR "/home/travis/build/s-grig/projekt/leptonica-1.80.0/")
+#set(Leptonica_DIR "/usr/local/lib/cmake/")
 #HunterGate(
 #  URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
 #  SHA1 "e14bc153a7f16d6a5eeec845fb0283c8fad8c358"  
