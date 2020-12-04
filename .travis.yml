@@ -53,7 +53,7 @@ before_install:
 script:
   - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
   - export PKG_CONFIG=/usr/bin/pkg-config
-  - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
+  #- sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzvf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
