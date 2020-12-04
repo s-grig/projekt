@@ -1,9 +1,11 @@
 version: 1.0.{build}  
 
-image: Visual Studio 2019 
+image: 
+   - Visual Studio 2019 
+   #- Ubuntu
 platform:
-  #- x86
-  - x64
+  - x86
+  #- x64
 configuration:
     - Debug
     - Release
@@ -34,16 +36,23 @@ build_script:
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
-#  - build\Debug\main.exe
+### - build\Debug\main.exe
   - echo "Testing_1 main is done"
-  #- cd ..
-  #- mkdir _build
-  #- cd _build
-  #- cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
-  #- cmake --build .
- 
+   
 artifacts:
- - path: /.*\.exe/
+
+  # pushing a single file
+  - path: projekt.zip
+
+  # pushing a single file with environment variable in path and "Deployment name" specified
+  - path: MyProject\bin\$(configuration)
+    name: myapp
+
+  # pushing entire folder as a zip archive
+  - path: logs
+
+  # pushing all *.nupkg files in build directory recursively
+  - path: '**\*.nupkg'
  
 #deploy:
 #- provider: GitHub

@@ -117,10 +117,10 @@ public:
             window.draw(line);
 
             sf::Font font;
-            if (!font.loadFromFile("ARIAL.TTF")) {
+            if (!font.loadFromFile("..\\..\\..\\file\\font\\arial.ttf")) {
                 std::cout << "Ошибка чтения шрифта" << std::endl;
             }
-
+        
             sf::Text text;
             text.setCharacterSize(10);
             text.setFillColor(sf::Color(0, 0, 0));
