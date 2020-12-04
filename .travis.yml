@@ -76,9 +76,9 @@ script:
   - cd tesseract-4.1.1
   - ./autogen.sh
   - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
-  - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
-  - --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
-  #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
+  #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
+ #- --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
+  - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
   - make
   - make install
   - cd ..
