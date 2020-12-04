@@ -19,23 +19,32 @@ set(Leptonica_DIR "/usr/local/lib/cmake")
 
 project(projekt)
 
+find_package( PkgConfig REQUIRED)
+
+#pkg_search_module( TESSERACT REQUIRED tesseract )
+
+pkg_search_module( LEPTONICA REQUIRED lept )
+
+
 # Include subdirectories
 
 #include("tools/gate/cmake/HunterGate.cmake")
 
 # Include directories
-include_directories( ${Tesseract_INCLUDE_DIRS} )     # you
+include_directories( ${Tesseract_INCLUDE_DIRS} )
+
 include_directories( ${LEPTONICA_INCLUDE_DIRS} )
 # Check if libraries exist
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
-find_package(Tesseract CONFIG REQUIRED) # 4.1.1 is currently the latest version of the git repository.
+
+find_package(Tesseract CONFIG REQUIRED)
+
 find_package(Qt5Gui CONFIG REQUIRED)
+
 find_package(Qt5Widgets CONFIG REQUIRED)
+
 find_package(Leptonica CONFIG REQUIRED)
-
-
-# 03-12-2020 00:20
 
 
 # The main program
