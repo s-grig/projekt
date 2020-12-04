@@ -70,7 +70,8 @@ script:
   - wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
   - ls
   - tar xzvf 4.1.1.tar.gz
-  - cd 4.1.1
+  - ls
+  - cd tesseract-4.1.1
   - ./autogen.sh
   - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
   - --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
@@ -120,13 +121,13 @@ script:
   ##- tree
   ##- tree -P '*esseract*' --prune
   - mkdir build && cd build
-  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
-  # "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/"
-  #cmake -Draspicam_DIR=<dir>
-  #"-DCMAKE_PREFIX_PATH=/usr/local/lib/cmake" 
   - cmake ..
   - cmake --build .
   - cmake --build .  --config release
   - echo "Main application testing is done"
- #  -DCMAKE_PREFIX_PATH=/usr/local/share/
- # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
+  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
+  # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
+  #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
+ # "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/"
+  #cmake -Draspicam_DIR=<dir>
+  #"-DCMAKE_PREFIX_PATH=/usr/local/lib/cmake
