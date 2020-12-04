@@ -73,22 +73,34 @@ script:
   - ls
 
   ##- mkdir -p tesseract_s && cd tesseract_s
+  - apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config
+  - apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
+  - apt-get install libpango1.0-dev
+
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
-  - mkdir build
-  - cd build
-  - cmake ../
+  - ./autogen.sh
+  #- autoreconf -i
+  - ./configure
   - make
   - sudo make install
-  - cd ..
-  ###- ./autogen.sh
+  - sudo ldconfig
+  
+  ###- mkdir build
+  ###- cd build
+  ###- cmake ../
+  ###- make
+  ###- sudo make install
+  ###- sudo ldconfig
+  ###- cd ..
+  ##- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
   #- make install
   ###- autoreconf --install --force
   ###- ./configure
   ###- sudo make install
-  - sudo ldconfig
+  
   ###- make training
   ###- sudo make training-install
   - cd ..
