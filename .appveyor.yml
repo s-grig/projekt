@@ -44,8 +44,8 @@ build_script:
 artifacts:
 
    # pushing all - path: /.*\.exe/
- # - path:  build/Release/*.exe
-  - path: /.*\.exe/
+  - path:  build/Release/*.exe
+ # - path: /.*\.exe/
 #deploy:
 #- provider: GitHub
 #  auth_token:

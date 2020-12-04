@@ -26,10 +26,7 @@ before_install:
    - sudo apt-get update -qq
    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-   #- sudo apt-get install tesseract-ocr
-   #- sudo apt install libleptonica-dev
-   #- sudo apt-get install libtesseract-dev
-   #- sudo apt install libopencv-dev -y
+  
 #   - pkg-config --cflags --libs tesseract
    - sudo apt install qt5-default
    - sudo apt-get install libgtk2.0-dev -y
@@ -45,7 +42,12 @@ before_install:
    - sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
    - sudo apt-get install libpango1.0-dev
-
+   
+  ################################################################ 
+   - sudo apt install libleptonica-dev
+   #- sudo apt-get install tesseract-ocr
+   - sudo apt-get install libtesseract-dev
+   - sudo apt install libopencv-dev -y
 script:
   - ls
   - mkdir sfml
@@ -63,28 +65,27 @@ script:
   - ls
   - cd ..
   - ls
-  - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
-  - tar xzvf leptonica-1.80.0.tar.gz
- # tar xzvf
-  - cd leptonica-1.80.0
+  #- wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
+  #- tar xzvf leptonica-1.80.0.tar.gz
+  #- cd leptonica-1.80.0
   #- autoreconf --install --force
-  - ./configure
-  - sudo make install
-  - sudo make check
-  - cd ..
+  #- ./configure
+  #- sudo make install
+  #- sudo make check
+  #- cd ..
   - ls
 
-  ##- mkdir -p tesseract_s && cd tesseract_s
-  
-  - git clone https://github.com/tesseract-ocr/tesseract.git
-  - cd tesseract
-  - mkdir build
-  - cd build
-  - cmake ../
-  - make
-  - sudo make install
-  - sudo ldconfig
-  - cd ..
+    
+  #- git clone https://github.com/tesseract-ocr/tesseract.git
+  #- cd tesseract
+  #- mkdir build
+  #- cd build
+  #- cmake ../
+  #- make
+  #- sudo make install
+  #- sudo ldconfig
+  #- cd ..
+  #- cd ..
   - ls
   ##- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
@@ -96,7 +97,7 @@ script:
   
   ###- make training
   ###- sudo make training-install
-  - cd ..
+  
   ##- cd ..
   - ls
   #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
