@@ -31,10 +31,9 @@ before_install:
    - sudo apt-get install tree
  
    - sudo apt-get install libtool-bin libtool-doc
-   - sudo apt-get install ca-certificates
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
    - sudo apt-get install libpango1.0-dev
-   - sudo apt-get install pkg-config
+   #- sudo apt-get install pkg-config
    - sudo apt-get install libpng-dev
    - sudo apt-get install libjpeg8-dev
    - sudo apt-get install libtiff5-dev
@@ -51,9 +50,9 @@ before_install:
      
    ################################################################
 script:
-  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-  - export PKG_CONFIG=/usr/bin/pkg-config
-  #- sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
+ # - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+ # - export PKG_CONFIG=/usr/bin/pkg-config
+  ################# LEPTONICA  ##############################################
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzvf leptonica-1.80.0.tar.gz
   - cd leptonica-1.80.0
@@ -64,6 +63,7 @@ script:
   - cd ..
   - ls
   - cd ..
+  - ls
   ################ TESSERACT #################################################
   - git clone https://github.com/tesseract-ocr/tesseract.git
   ##- wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
