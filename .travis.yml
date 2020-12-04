@@ -85,6 +85,8 @@ script:
   - make
   - sudo make install
   - sudo ldconfig
+  - ls
+   
   
   ###- mkdir build
   ###- cd build
