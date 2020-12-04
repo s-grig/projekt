@@ -30,11 +30,11 @@ project(projekt)
 # Check if libraries exist
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
+find_package(Tesseract CONFIG REQUIRED) # 4.1.1 is currently the latest version of the git repository.
 find_package(Qt5Gui CONFIG REQUIRED)
 find_package(Qt5Widgets CONFIG REQUIRED)
 find_package(Leptonica CONFIG REQUIRED)
-##find_package(Tesseract CONFIG REQUIRED)
-find_package(Tesseract REQUIRED) # 4.1.1 is currently the latest version of the git repository.
+
 
 # 03-12-2020 00:20
 
@@ -51,10 +51,9 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #set_target_properties(main PROPERTIES AUTOMOC TRUE)
 
+target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network)
 
 target_link_libraries(main PRIVATE ${Tesseract_LIBRARIES})
-
-target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network)
 
 target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
 
