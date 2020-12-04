@@ -54,8 +54,6 @@ before_install:
    - sudo apt install libopencv-dev -y
    ################################################################
 script:
-  - ls /home
-  - ls $HOME/local/
   - echo "$HOME"
   - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
   - tar xzvf leptonica-1.80.0.tar.gz
