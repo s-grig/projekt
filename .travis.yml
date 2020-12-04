@@ -64,11 +64,7 @@ script:
   - cd build
   - cmake ..
   - make 
-  -  #- autoreconf --i
-  #- ./configure
-  ############--prefix=$HOME/local/
-  #- sudo make install
-  #- sudo make check
+  
   - cd ..
   - ls
   - cd ..
