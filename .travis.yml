@@ -85,11 +85,12 @@ script:
  # - sudo make install
 #  - sudo ldconfig
  # - cd ..
-  - export PKG_CONFIG_PATH = / usr / local / lib / pkgconfig
-  - export PKG_CONFIG = / usr / bin / pkg-config
+   
+  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+  - export PKG_CONFIG = /usr/bin/pkg-config
   - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
 
-  - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
+  
   - mkdir build
   - cd build
   - cmake ../
