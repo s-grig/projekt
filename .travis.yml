@@ -32,23 +32,69 @@ before_install:
    - sudo apt-get install libgtk2.0-dev -y
    - sudo apt-get install tree
    
-   #- sudo apt-get install autoconf automake libtool
-   ###- sudo apt-get install pkg-config
-   #- sudo apt-get install libpng-dev
-   #- sudo apt-get install libjpeg8-dev
-   #- sudo apt-get install libtiff5-dev
-   #- sudo apt-get install zlib1g-dev
+   - sudo apt-get install autoconf automake libtool
+    
    - sudo apt-get install libtool-bin libtool-doc
    - sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
    - sudo apt-get install libpango1.0-dev
+   - sudo apt-get install pkg-config
+   - sudo apt-get install libpng-dev
+   - sudo apt-get install libjpeg8-dev
+   - sudo apt-get install libtiff5-dev
+   - sudo apt-get install zlib1g-dev
+   - sudo apt-get install libicu-dev
+   - sudo apt-get install libpango1.0-dev
+   - sudo apt-get install libcairo2-dev
    
   ################################################################ 
-   - sudo apt install libleptonica-dev
-   - sudo apt-get install tesseract-ocr
-   - sudo apt-get install libtesseract-dev
+   #- sudo apt install libleptonica-dev
+   #- sudo apt-get install tesseract-ocr
+   #- sudo apt-get install libtesseract-dev
    - sudo apt install libopencv-dev -y
+   ################################################################
 script:
+  
+  - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
+  - tar xzvf leptonica-1.80.0.tar.gz
+  - cd leptonica-1.80.0
+  #- autoreconf --i
+  - ./configure --prefix=$HOME/local/
+  - sudo make install
+  - sudo make check
+  - cd ..
+  - ls
+  
+    
+  #- git clone https://github.com/tesseract-ocr/tesseract.git
+  - wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
+  - tar xzvf tesseract-4.1.1.tar.gz
+  - cd tesseract-4.1.1
+  - ./autogen.sh
+  - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
+  - --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
+  - make
+  - make install
+  - cd ..
+
+  #- mkdir build
+  #- cd build
+  #- cmake ../
+  #- make
+  #- sudo make install
+  #- sudo ldconfig
+  #- cd ..
+  #- cd ..
+  - ls
+  - tesseract --version
+  
+  
+  
+ 
+  #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
+  #- export TESSDATA_PREFIX=/usr/local/share/
+  #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
+    
   - ls
   - mkdir sfml
   - cd sfml
@@ -65,46 +111,8 @@ script:
   - ls
   - cd ..
   - ls
-  #- wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
-  #- tar xzvf leptonica-1.80.0.tar.gz
-  #- cd leptonica-1.80.0
-  #- autoreconf --install --force
-  #- ./configure
-  #- sudo make install
-  #- sudo make check
-  #- cd ..
-  - ls
-
-    
-  #- git clone https://github.com/tesseract-ocr/tesseract.git
-  #- cd tesseract
-  #- mkdir build
-  #- cd build
-  #- cmake ../
-  #- make
-  #- sudo make install
-  #- sudo ldconfig
-  #- cd ..
-  #- cd ..
-  - ls
-  ##- ./autogen.sh
-  #- export LIBLEPT_HEADERSDIR=/local/include
-  #- ./configure --with-extra-libraries=/local/lib
-  #- make install
-  ###- autoreconf --install --force
-  ###- ./configure
-  ###- sudo make install
-  
-  ###- make training
-  ###- sudo make training-install
-  
-  ##- cd ..
-  - ls
-  #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
-  #- export TESSDATA_PREFIX=/usr/local/share/
-  #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
-  
-  - tesseract --version
+  - ls /home
+  - echo "$HOME"
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
