@@ -27,11 +27,9 @@ before_install:
    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
   ####################################################################
-#   - pkg-config --cflags --libs tesseract
- #  - sudo apt install qt5-default
    - sudo apt-get install libgtk2.0-dev -y
    - sudo apt-get install tree
-        
+ 
    - sudo apt-get install libtool-bin libtool-doc
    - sudo apt-get install ca-certificates
    - sudo apt-get install --no-install-recommends asciidoc docbook-xsl xsltproc
@@ -45,16 +43,14 @@ before_install:
    - sudo apt-get install libpango1.0-dev
    - sudo apt-get install libcairo2-dev
    
-  ############################ SFML ############################### 
+  ############################ SFML  ############################### 
    - sudo apt-get install libx11-dev libgl1-mesa-dev libudev-dev libfreetype6-dev libopenal-dev libflac-dev libvorbis-dev
    - sudo aptitude install x11-xserver-utils -y
    - sudo apt install libavcodec-dev libavformat-dev libswscale-dev -y
    - sudo apt-get install xorg-dev -y
-   #- cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
-   - sudo make && sudo make install
+     
    ################################################################
 script:
-  - echo "$HOME"
   - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
   - export PKG_CONFIG = /usr/bin/pkg-config
   - sudo cp /usr/local/lib/pkgconfig/lept.pc /usr/lib64/pkgconfig/
@@ -68,22 +64,19 @@ script:
   - cd ..
   - ls
   - cd ..
-  
+  ################ TESSERACT #################################################
   - git clone https://github.com/tesseract-ocr/tesseract.git
   ##- wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
-  - ls /usr/local/lib/cmake
-  - ls /usr/local/lib/
   ##- tar xzvf 4.1.1.tar.gz
-  - ls
- ## - cd tesseract-4.1.1
+  ## - cd tesseract-4.1.1
   - cd tesseract
  # - ./autogen.sh
  # - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig     
  # - ./configure
-  #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
+ #- LIBLEPT_HEADERSDIR=$HOME/local/include ./configure \
  #- --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
- ### - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
-#  - sudo make
+ ## - LIBLEPT_HEADERSDIR=$HOME/local/include ./configure --prefix=$HOME/local/ --with-extra-libraries=$HOME/local/lib
+ # - sudo make
  # - sudo make install
 #  - sudo ldconfig
  # - cd ..
@@ -91,7 +84,7 @@ script:
   - mkdir build
   - cd build
   - cmake ../
-  - make
+  - sudo make
   - sudo make install
   - sudo ldconfig
   - cd ..
@@ -109,13 +102,12 @@ script:
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
   - unzip SFML-2.5.1-sources.zip
   - cd SFML-2.5.1
-  
+  - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
+  - sudo make && sudo make install
+  - cd ..
   - cd ..
   - ls
-  - cd ..
-  - ls
-  - ls /home
-  - echo "$HOME"
+    
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
@@ -124,7 +116,7 @@ script:
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
-  - cmake --build .  --config release
+  - cmake --build .  --config debug
   - echo "Main application testing is done"
   #  -DCMAKE_PREFIX_PATH=/usr/local/share/
   # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
