@@ -43,7 +43,7 @@ build_script:
 artifacts:
 
    # pushing all *.nupkg files in build directory recursively
-  - path: ./build/*.exe
+  - path: ./build/*.nupkg
 #deploy:
 #- provider: GitHub
 #  auth_token:
