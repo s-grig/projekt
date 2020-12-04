@@ -42,6 +42,13 @@ before_install:
    #- sudo apt-get install libtiff5-dev
    #- sudo apt-get install zlib1g-dev
    - sudo apt-get install libtool-bin
+   #################### SFML #####################
+   - sudo apt-get install libx11-dev libgl1-mesa-dev libudev-dev libfreetype6-dev libopenal-dev libflac-dev libvorbis-dev
+   - sudo aptitude install x11-xserver-utils -y
+   - sudo apt install libavcodec-dev libavformat-dev libswscale-dev -y
+   - sudo apt-get install xorg-dev -y
+##################################################
+
 
 
 script:
@@ -73,10 +80,6 @@ script:
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
   - unzip SFML-2.5.1-sources.zip
   - cd SFML-2.5.1
-  - sudo apt-get install libx11-dev libgl1-mesa-dev libudev-dev libfreetype6-dev libopenal-dev libflac-dev libvorbis-dev
-  - sudo aptitude install x11-xserver-utils -y
-  - sudo apt install libavcodec-dev libavformat-dev libswscale-dev -y
-  - sudo apt-get install xorg-dev -y
   - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
   - sudo make && sudo make install
   - cd ..
