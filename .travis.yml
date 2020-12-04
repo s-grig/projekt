@@ -69,12 +69,13 @@ script:
   - ls
   
     
-  #- git clone https://github.com/tesseract-ocr/tesseract.git
-  - wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
+  - git clone https://github.com/tesseract-ocr/tesseract.git
+  ##- wget https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz
   - ls
-  - tar xzvf 4.1.1.tar.gz
+  ##- tar xzvf 4.1.1.tar.gz
   - ls
-  - cd tesseract-4.1.1
+ ## - cd tesseract-4.1.1
+  - cd tesseract
   - ./autogen.sh
   - export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig
   - ./configure
