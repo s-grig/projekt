@@ -25,7 +25,7 @@ project(projekt)
 #include("tools/gate/cmake/HunterGate.cmake")
 
 # Include directories
-include_directories(${Tesseract_INCLUDE_DIRS})     # you
+#include_directories(${Tesseract_INCLUDE_DIRS})     # you
 
 # Check if libraries exist
 

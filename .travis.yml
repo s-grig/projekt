@@ -18,7 +18,7 @@ addons:
   packages:
    - cmake
    - cmake-data
-   #- clang-5.0
+   - clang-5.0
    - g++-7
 before_install:
    #- sudo apt-get install libsfml-dev -y
