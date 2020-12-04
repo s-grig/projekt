@@ -36,14 +36,13 @@ build_script:
   - cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\vcpkg-export-20201130-003734\scripts\buildsystems\vcpkg.cmake"
   - cmake --build .
-  - build\Debug\main.exe
+  - build\main.exe
   - echo "Testing_1 main is done"
    
 artifacts:
 
    # pushing all *.nupkg files in build directory recursively
-  - path: '**\*.nupkg'
- 
+  - path: ./build/*.exe
 #deploy:
 #- provider: GitHub
 #  auth_token:
