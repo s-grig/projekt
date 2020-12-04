@@ -38,12 +38,13 @@ build_script:
   - cmake --build . --config Release
  # - tree _install
  # - build/Release/main.exe
+  - build\Debug\main.exe
   - echo "Testing_1 main is done"
    
 artifacts:
 
    # pushing all - path: /.*\.exe/
-  - path:  build/Release/*.exe
+ # - path:  build/Release/*.exe
   - path: /.*\.exe/
 #deploy:
 #- provider: GitHub
