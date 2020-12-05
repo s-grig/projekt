@@ -4,9 +4,8 @@ compiler:
  - gcc
  - clang
 cache: ccache
-env:
- global:
-    - CC="/usr/bin/clang-5"
+
+ 
    
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
