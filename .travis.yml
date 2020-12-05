@@ -59,6 +59,8 @@ script:
   - sudo apt-get install libxi-dev
   - sudo apt-get install libxext-dev
   #- sudo apt-get install libx11-dev ## sfml
+
+  - sudo apt install fontconfig
   
   - git clone https://github.com/microsoft/vcpkg
   - ./vcpkg/bootstrap-vcpkg.sh

@@ -38,9 +38,9 @@ std::pair<std::string, std::string> Win::photo_processing() {
     std::string path_to_photo = get_path().toUtf8().constData();
     std::string outText;
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
-    if (api->Init("..\\..\\..\\file\\tessdata", "eng")) {
-        throw std::exception("Could not initialize tesseract.");
-    }
+    api->Init("..\\..\\..\\file\\tessdata", "eng");
+        
+    
     Pix* image = pixRead(path_to_photo.c_str());
     api->SetImage(image);
     outText = api->GetUTF8Text();
