@@ -28,7 +28,7 @@ before_install:
    - sudo apt-get install p7zip-rar p7zip-full
    - sudo apt-get install build-essential tar curl zip unzip
 
-##################################################  VPCKG ###########################
+##################################################  VPCKG ######### ##################
 script:
   
   # Link gcc-6 and g++-6 to their standard commands
