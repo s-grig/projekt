@@ -1,3 +1,6 @@
+dist: trusty
+sudo: require
+
 language: cpp
 
 compiler:
@@ -18,7 +21,8 @@ addons:
    - cmake
    - cmake-data
    - clang-5.0
-   - g++-7
+   - g++-6
+   - gcc-6
   
 before_install:
    - sudo apt-get install p7zip-rar p7zip-full
@@ -26,7 +30,17 @@ before_install:
 
 ##################################################  VPCKG ###########################
 script:
-    
+  
+  # Link gcc-6 and g++-6 to their standard commands
+  - ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  # Export CC and CXX to tell cmake which compiler to use
+  - export CC=/usr/bin/gcc-6
+  - export CXX=/usr/bin/g++-6
+  # Check versions of gcc, g++ and cmake
+  - gcc -v && g++ -v && cmake --version
+  # Run your build commands next
+  
   - git clone https://github.com/microsoft/vcpkg
   - ./vcpkg/bootstrap-vcpkg.sh
  #- ./vcpkg/vcpkg install sfml tesseract qt5-imageformats
