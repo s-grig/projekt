@@ -97,7 +97,7 @@ script:
   - cd tesseract
   - ./autogen.sh
   - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-  - LIBLEPT_HEADERSDIR=usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=usr/local/lib
+  - LIBLEPT_HEADERSDIR=/usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=/usr/local/lib
  #- autoreconf --install --force
   - ./configure
   - sudo make install
