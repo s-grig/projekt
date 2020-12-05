@@ -100,7 +100,7 @@ script:
   - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
   - LIBLEPT_HEADERSDIR=/usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=/usr/local/lib
  #- autoreconf --install --force
-  - ./configure
+  #- ./configure
   - sudo make install
   - sudo ldconfig
   - make training
