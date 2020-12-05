@@ -1,28 +1,23 @@
-dist: trusty
-sudo: require
+os:
+  - linux
+  - osx
 
 language: cpp
 
-compiler:
- - gcc
- #- clang
-cache: ccache
-  
-    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
-    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
-    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
-    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+dist: trusty
+
 addons:
- apt:
-  sources:
-   - ubuntu-toolchain-r-test
-   #- llvm-toolchain-precise-5.0
-  packages:
-   - cmake
-   - cmake-data
-   #- clang-5.0
-   - g++-6
-   - gcc-6
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - sourceline: "ppa:beineri/opt-qt-5.10.1-trusty"
+    packages:
+      - gcc-7
+      - g++-7
+      - qt510-meta-minimal
+      - qt510svg
+      - qt510imageformats
+      - qt510tools
   
 before_install:
    - sudo apt-get install p7zip-rar p7zip-full
