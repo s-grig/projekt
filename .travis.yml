@@ -20,7 +20,7 @@ addons:
   packages:
    - cmake
    - cmake-data
-   - clang-7.0
+   - clang-5.0
    - g++-7
    - llvm-7-dev
 before_install:
