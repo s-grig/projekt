@@ -22,7 +22,7 @@ addons:
    - cmake-data
    - clang-5.0
    - g++-7
-   - llvm-7-dev
+   - llvm-5-dev
 before_install:
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    - sudo apt-get update -qq
