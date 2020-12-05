@@ -5,7 +5,7 @@ language: cpp
 
 compiler:
  - gcc
- - clang
+ #- clang
 cache: ccache
   
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
@@ -16,11 +16,11 @@ addons:
  apt:
   sources:
    - ubuntu-toolchain-r-test
-   - llvm-toolchain-precise-5.0
+   #- llvm-toolchain-precise-5.0
   packages:
    - cmake
    - cmake-data
-   - clang-6.0
+   #- clang-5.0
    - g++-6
    - gcc-6
   
