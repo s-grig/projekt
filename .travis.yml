@@ -40,14 +40,20 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
 
-  - sudo apt-get install tree
+  #- sudo apt-get install tree
   - sudo apt-get install p7zip-rar p7zip-full
   - sudo apt-get install build-essential tar curl zip unzip
-  ############# SFML ############
+  ############# SFML ############ apt-get install libx11-dev libxrandr-dev libxi-dev libudev-dev libgl1-mesa-dev
   - sudo apt-get install libx11-dev
   - sudo apt-get install xorg-dev
   - sudo apt-get install freeglut3-dev
   - sudo apt-get install libudev-dev
+  - sudo apt-get install libxrandr-dev
+  #- sudo apt-get install libxi-dev
+  - sudo apt-get install libgl1-mesa-dev
+  #- sudo apt-get install libudev-dev
+
+
   ############### Qt5 ##############
   - sudo apt-get install libmesa-dev  
   - sudo apt-get install libxi-dev
