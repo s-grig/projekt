@@ -109,8 +109,9 @@ script:
   ##- cd ..
   - ls
   #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
-  #- export TESSDATA_PREFIX=/usr/local/share/
+  #- export TESSDATA_PREFIX=/usr/local/share/    #/usr/local/share/tessdata
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
+  - export TESSDATA_PREFIX="/home/travis/build/s-grig/projekt/tesseract/tessdata" 
   
   - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
