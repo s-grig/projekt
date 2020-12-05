@@ -121,7 +121,7 @@ script:
   #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
   #- export TESSDATA_PREFIX=/usr/local/share/    #/usr/local/share/tessdata
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
-  - export TESSDATA_PREFIX="/home/travis/build/s-grig/projekt/tesseract/tessdata" 
+  #- export TESSDATA_PREFIX="/home/travis/build/s-grig/projekt/tesseract/tessdata" 
   
   - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
@@ -137,7 +137,7 @@ script:
   #  "-DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract"
   
   - cmake ..
-  - cmake --build . --config Release
+  - cmake --build .
   - echo "Main application testing is done"
  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
  # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
