@@ -96,9 +96,9 @@ script:
   ##- mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
-  - mkdir build
-  - cd build
-  - cmake ../
+  #- mkdir build
+  #- cd build
+  - cmake ./
   - make
   - sudo make install
   - sudo ldconfig
