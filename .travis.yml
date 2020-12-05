@@ -4,13 +4,13 @@ os:
 
 language: cpp
 
-dist: trusty
+dist: bionic
 
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - sourceline: "ppa:beineri/opt-qt-5.10.1-trusty"
+      - sourceline: "ppa:beineri/opt-qt-5.10.1-bionic"
     packages:
       - gcc-7
       - g++-7
