@@ -1,0 +1,44 @@
+language: cpp
+
+compiler:
+ - gcc
+ - clang
+cache: ccache
+  
+    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
+    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+addons:
+ apt:
+  sources:
+   - ubuntu-toolchain-r-test
+   - llvm-toolchain-precise-5.0
+  packages:
+   - cmake
+   - cmake-data
+   - clang-5.0
+   - g++-7
+  
+before_install:
+   - sudo apt-get install p7zip-rar p7zip-full
+   - sudo apt-get install build-essential tar curl zip unzip
+
+##################################################  VPCKG ###########################
+script:
+    
+  - git clone https://github.com/microsoft/vcpkg
+  - ./vcpkg/bootstrap-vcpkg.sh
+ #- ./vcpkg/vcpkg install sfml tesseract qt5-imageformats
+ # - wget -c https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
+ # - unzip vcpkg-export-20201130-003734.zip
+  - ./vcpkg/vcpkg install sfml 
+  - ./vcpkg/vcpkg install qt5-imageformats
+  - ./vcpkg/vcpkg install tesseract
+  
+  - mkdir build && cd build
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=/home/travis/build/s-grig/projekt/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  - cmake --build .
+  - echo "Main application testing is done"
+  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
+ # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
