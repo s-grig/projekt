@@ -102,7 +102,7 @@ script:
   - make
   - sudo make install
   - sudo ldconfig
-  - cd ..
+  #- cd ..
   ###- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
