@@ -64,4 +64,4 @@ target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Widgets_LIBRARIES})
 target_link_libraries(main PRIVATE ${Leptonica_LIBRARIES})
 
-target_link_libraries(main PRIVATE -llept -ltesseract) # must add this line to link Tesseract and leptonica libs
+#target_link_libraries(main PRIVATE -llept -ltesseract) # must add this line to link Tesseract and leptonica libs
