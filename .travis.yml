@@ -43,16 +43,23 @@ script:
   - sudo apt-get install tree
   - sudo apt-get install p7zip-rar p7zip-full
   - sudo apt-get install build-essential tar curl zip unzip
+  ############# SFML ############
+  - sudo apt-get install libx11-dev
+  - sudo apt-get install xorg-dev
+  - sudo apt-get install freeglut3-dev
+  - sudo apt-get install libudev-dev
   
   - git clone https://github.com/microsoft/vcpkg
   - ./vcpkg/bootstrap-vcpkg.sh
- #- ./vcpkg/vcpkg install sfml tesseract qt5-imageformats
+  - ./vcpkg/vcpkg update
  # - wget -c https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
  # - unzip vcpkg-export-20201130-003734.zip
-  - ./vcpkg/vcpkg install libudev libx11 libxrandr opengl
-  - ./vcpkg/vcpkg install sfml 
+  - ./vcpkg/vcpkg install sfml
   - ./vcpkg/vcpkg install qt5-imageformats
   - ./vcpkg/vcpkg install tesseract
+  #- ./vcpkg/vcpkg install libudev libx11 libxrandr opengl
+  
+  
   
   - mkdir build && cd build
   - cmake .. "-DCMAKE_TOOLCHAIN_FILE=/home/travis/build/s-grig/projekt/vcpkg/scripts/buildsystems/vcpkg.cmake"
