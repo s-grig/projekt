@@ -12,7 +12,8 @@ set(CMAKE_AUTOMOC ON)
 
 set(Tesseract_DIR "/usr/local/lib/cmake")
 
-set(Leptonica_DIR "/usr/local/include")
+#set(Leptonica_DIR "/usr/local/include")
+set(Leptonica_DIR "/usr/local/lib/cmake")
 
 #set(Leptonica_DIR "/usr/local/lib/cmake/")
 #HunterGate(
