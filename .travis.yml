@@ -93,21 +93,31 @@ script:
   - ls
 
   ##- mkdir -p tesseract_s && cd tesseract_s
+  ##- mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
-  - ./autogen.sh
-  - autoreconf -i
-  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-  - LIBLEPT_HEADERSDIR=/usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=/usr/local/lib
- #- autoreconf --install --force
-  #- ./configure
+  - mkdir build
+  - cd build
+  - cmake ../
+  - make
   - sudo make install
   - sudo ldconfig
-  - make training
-  - sudo make training-install
+  - cd ..
+  ###- ./autogen.sh
+  #- export LIBLEPT_HEADERSDIR=/local/include
+  #- ./configure --with-extra-libraries=/local/lib
+  #- LIBLEPT_HEADERSDIR=/usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=/usr/local/lib
+  #- make install
+  ###- autoreconf --install --force
+  ###- ./configure
+  ###- sudo make install
+  ###- make training
+  ###- sudo make training-install
   - cd ..
   ##- cd ..
   - ls
+
+  
   #- export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
   #- export TESSDATA_PREFIX=/usr/local/share/    #/usr/local/share/tessdata
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
