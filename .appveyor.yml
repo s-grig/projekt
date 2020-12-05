@@ -38,7 +38,7 @@ build_script:
   - cmake --build . --config Release --target package_source
  # - tree _install
  # - build/Release/main.exe
-  - build\Debug\main.exe
+ # - build\Debug\main.exe
   - echo "Testing_1 main is done"
    
 artifacts:
