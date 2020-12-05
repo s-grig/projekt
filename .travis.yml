@@ -95,15 +95,10 @@ script:
   ##- mkdir -p tesseract_s && cd tesseract_s
   - git clone https://github.com/tesseract-ocr/tesseract.git
   - cd tesseract
-
   - ./autogen.sh
-  - export PKG_CONFIG_PATH=usr/local/lib/pkgconfig
-  - LIBLEPT_HEADERSDIR=usr/local/include ./configure --prefix=usr/local/ --with-extra-libraries=usr/local/lib
-
-  #- export LIBLEPT_HEADERSDIR=/local/include
-  #- ./configure --with-extra-libraries=/local/lib
-  #- make install
-  #- autoreconf --install --force
+  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+  - LIBLEPT_HEADERSDIR=usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=usr/local/lib
+ #- autoreconf --install --force
   - ./configure
   - sudo make install
   - sudo ldconfig
