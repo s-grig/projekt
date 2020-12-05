@@ -127,17 +127,24 @@ script:
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
   - find / -name  "*onfig.cmake" -print 2>/dev/null
   - find  / -name "TesseractConfig*" -print 2>/dev/null
-  - find  / -name "tesseract-config*" -print 2>/dev/null
+  - find  / -name "LeptonicaConfig*" -print 2>/dev/null
   ##- tree
   ##- tree -P '*esseract*' --prune
-  - mkdir build && cd build
+  
   #- cmake .. "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/templates/"
   # "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/"
   #cmake -Draspicam_DIR=<dir>
   #  "-DTesseract_DIR=/home/travis/build/s-grig/projekt/tesseract"
-  
-  - cmake ..
-  - cmake --build .
+  #- mkdir build && cd build
+  #- cmake ..
+  #- cmake --build .
+  #- echo "Main application testing is done"
+  - ./configure
+  - sudo make install
+  - sudo make check
   - echo "Main application testing is done"
+
+
+
  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
  # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
