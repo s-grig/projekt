@@ -10,10 +10,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
 
-set(Tesseract_DIR "/usr/local/lib/cmake")
+set(Tesseract_DIR "/usr/local/lib/cmake/")
 
 #set(Leptonica_DIR "/usr/local/include")
-set(Leptonica_DIR "/usr/local/lib/cmake")
+set(Leptonica_DIR "/usr/local/lib/cmake/")
 
 #set(Leptonica_DIR "/usr/local/lib/cmake/")
 #HunterGate(
