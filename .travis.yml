@@ -40,14 +40,16 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
 
-
+  - sudo apt-get install tree
   - sudo apt-get install p7zip-rar p7zip-full
   - sudo apt-get install build-essential tar curl zip unzip
+  
   - git clone https://github.com/microsoft/vcpkg
   - ./vcpkg/bootstrap-vcpkg.sh
  #- ./vcpkg/vcpkg install sfml tesseract qt5-imageformats
  # - wget -c https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
  # - unzip vcpkg-export-20201130-003734.zip
+  - ./vcpkg/vcpkg install libudev libx11 libxrandr opengl
   - ./vcpkg/vcpkg install sfml 
   - ./vcpkg/vcpkg install qt5-imageformats
   - ./vcpkg/vcpkg install tesseract
