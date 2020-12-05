@@ -6,7 +6,7 @@ compiler:
 cache: ccache
 env:
  global:
-    - CC="/usr/bin/clang-7"
+    - CC="/usr/bin/clang-5"
    
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
@@ -22,7 +22,7 @@ addons:
    - cmake-data
    - clang-5.0
    - g++-7
-   - llvm-5-dev
+  
 before_install:
    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    - sudo apt-get update -qq
