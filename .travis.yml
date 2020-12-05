@@ -10,14 +10,14 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - sourceline: "ppa:beineri/opt-qt-5.10.1-bionic"
+      - sourceline: "ppa:beineri/opt-qt-5.14.1-bionic"
     packages:
       - gcc-7
       - g++-7
-      - qt510-meta-minimal
-      - qt510svg
-      - qt510imageformats
-      - qt510tools
+      - qt514-meta-minimal
+      - qt514svg
+      - qt514imageformats
+      - qt514tools
   
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
