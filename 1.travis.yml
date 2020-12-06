@@ -1,0 +1,82 @@
+os:
+  - linux
+  #- osx
+
+language: cpp
+
+dist: bionic
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - sourceline: "ppa:beineri/opt-qt-5.14.1-bionic"
+    packages:
+      - gcc-7
+      - g++-7
+      - qt514-meta-minimal
+      - qt514svg
+      - qt514imageformats
+      - qt514tools
+      
+  
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew update ;
+      brew install qt5 cmake ;
+      brew link --force qt ;
+    fi
+
+script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      export CC=gcc-7 ;
+      export CXX=g++-7 ;
+      source /opt/qt514/bin/qt514-env.sh ;
+    fi
+  - cmake --version
+  - qmake --version
+
+  # Check versions of gcc, g++ and cmake
+  - gcc -v && g++ -v && cmake --version
+  # Run your build commands next
+
+  #- sudo apt-get install tree
+  - sudo apt-get install p7zip-rar p7zip-full
+  - sudo apt-get install build-essential tar curl zip unzip
+  ############# SFML ############ apt-get install libx11-dev libxrandr-dev libxi-dev libudev-dev libgl1-mesa-dev
+  - sudo apt-get install libx11-dev
+  - sudo apt-get install xorg-dev
+  - sudo apt-get install freeglut3-dev
+  - sudo apt-get install libudev-dev
+  - sudo apt-get install libxrandr-dev
+  #- sudo apt-get install libxi-dev
+  - sudo apt-get install libgl1-mesa-dev
+  #- sudo apt-get install libudev-dev
+
+
+  ############### Qt5 ##############
+  - sudo apt-get install libmesa-dev  
+  - sudo apt-get install libxi-dev
+  - sudo apt-get install libxext-dev
+  #- sudo apt-get install libx11-dev ## sfml
+
+  - sudo apt install fontconfig
+  
+  - git clone https://github.com/microsoft/vcpkg
+  - ./vcpkg/bootstrap-vcpkg.sh
+  - ./vcpkg/vcpkg update
+ # - wget -c https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
+ # - unzip vcpkg-export-20201130-003734.zip
+  - ./vcpkg/vcpkg install sfml
+  - ./vcpkg/vcpkg install qt5-imageformats
+  - ./vcpkg/vcpkg install tesseract
+  #- ./vcpkg/vcpkg install libudev libx11 libxrandr opengl
+  
+  
+  
+  - mkdir build && cd build
+  - cmake .. "-DCMAKE_TOOLCHAIN_FILE=/home/travis/build/s-grig/projekt/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  - cmake --build . --config Release
+  - echo "Main application testing is done"
+  #  -DCMAKE_PREFIX_PATH=/usr/local/share/
+ # cmake -DTesseract_DIR=/home/travis/build/s-grig/projekt/leptonica-1.80.0/tesseract_s/tesseract/cmake/templates
