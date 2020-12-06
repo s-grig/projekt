@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 # Specify minimum version
 set(MINIMUM_TESSERACT_VERSION 4.1.0)
-#set(MINIMUM_LEPTONICA_VERSION 1.74)
+set(MINIMUM_LEPTONICA_VERSION 1.74)
 
 
 set(CMAKE_CXX_STANDARD 17)            
@@ -10,10 +10,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
 
-set(Tesseract_DIR "/home/travis/build/s-grig/projekt/tesseract/build/")
+#set(Tesseract_DIR "/home/travis/build/s-grig/projekt/tesseract/build/")
 
 #set(Leptonica_DIR "/usr/local/include")
-set(Leptonica_DIR "/home/travis/build/s-grig/projekt/leptonica-1.80.0/")
+#set(Leptonica_DIR "/home/travis/build/s-grig/projekt/leptonica-1.80.0/")
 
 #set(Leptonica_DIR "/usr/local/lib/cmake/")
 #HunterGate(
