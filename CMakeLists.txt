@@ -32,7 +32,7 @@ project(projekt)
 # Include directories
 include_directories(${Tesseract_INCLUDE_DIRS})
 
-include_directories(${LEPTONICA_INCLUDE_DIRS})
+#include_directories(${LEPTONICA_INCLUDE_DIRS})
 # Check if libraries exist
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network)
@@ -62,6 +62,6 @@ target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-ne
 target_link_libraries(main PRIVATE ${Tesseract_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Widgets_LIBRARIES})
-target_link_libraries(main PRIVATE ${Leptonica_LIBRARIES})
+#target_link_libraries(main PRIVATE ${Leptonica_LIBRARIES})
 
 #target_link_libraries(main PRIVATE -llept -ltesseract) # must add this line to link Tesseract and leptonica libs
