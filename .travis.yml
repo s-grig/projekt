@@ -78,13 +78,6 @@ script:
  # - wget -c https://stasg.ru/tv/vcpkg-export-20201130-003734.zip
  # - unzip vcpkg-export-20201130-003734.zip
 
- # - ./vcpkg/bootstrap-vcpkg.sh
- # - cd vcpkg 
- # - ./vcpkg list
- # - ./vcpkg install sfml tesseract 
- # - ./vcpkg install qt5-imageformats
- # - ./vcpkg list
-#  - cd ..
 
   #- cd home/travis/build/s-grig/projekt
     - mkdir sfml
@@ -109,7 +102,7 @@ script:
     - cd ..
     - ls
 
-  ##- mkdir -p tesseract_s && cd tesseract_s
+  
   ##- mkdir -p tesseract_s && cd tesseract_s
     - git clone https://github.com/tesseract-ocr/tesseract.git
     - cd tesseract
@@ -122,7 +115,7 @@ script:
 
     - mkdir build && cd build
     - cmake ../
-    - make
+    - sudo make
     - sudo make install
     - cd ..
     - cd ..
