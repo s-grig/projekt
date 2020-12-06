@@ -101,7 +101,7 @@ script:
     - sudo make check
     - cd ..
     - ls
-
+    - sudo apt-get remove libleptonica-dev
   
   ##- mkdir -p tesseract_s && cd tesseract_s
     - git clone https://github.com/tesseract-ocr/tesseract.git
