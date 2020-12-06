@@ -35,7 +35,7 @@ include_directories(${Tesseract_INCLUDE_DIRS})
 #include_directories(${LEPTONICA_INCLUDE_DIRS})
 # Check if libraries exist
 
-find_package(SFML REQUIRED COMPONENTS system window graphics network)
+find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
 
 find_package(Tesseract CONFIG REQUIRED)
 
@@ -58,7 +58,7 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #set_target_properties(main PROPERTIES AUTOMOC TRUE)
 
-target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network)
+target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 target_link_libraries(main PRIVATE ${Tesseract_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Widgets_LIBRARIES})
