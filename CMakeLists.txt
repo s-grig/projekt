@@ -43,7 +43,7 @@ find_package(Qt5Gui CONFIG REQUIRED)
 
 find_package(Qt5Widgets CONFIG REQUIRED)
 
-find_package(Leptonica CONFIG REQUIRED)
+#find_package(Leptonica CONFIG REQUIRED)
 
 
 # The main program
