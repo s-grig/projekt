@@ -113,13 +113,12 @@ script:
   ##- mkdir -p tesseract_s && cd tesseract_s
     - git clone https://github.com/tesseract-ocr/tesseract.git
     - cd tesseract
-  #- mkdir build
-  #- cd build
-    - cmake -H. -B_build  
-    - cmake --build _build
-   # - make
-    #- sudo make install
-    #- sudo ldconfig
+    - mkdir build && cd build
+    - cmake ..
+    - make
+    - sudo make install
+    - sudo ldconfig
+    - cd ..
     - cd ..
   ###- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
@@ -132,7 +131,7 @@ script:
   ###- make training
   ###- sudo make training-install
    
-  ##- cd ..
+  ##- 
     - ls
 
   
