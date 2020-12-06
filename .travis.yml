@@ -101,13 +101,14 @@ script:
     - sudo make check
     - cd ..
     - ls
-    - sudo apt-get remove libleptonica-dev
+    
   
   ##- mkdir -p tesseract_s && cd tesseract_s
     - git clone https://github.com/tesseract-ocr/tesseract.git
     - cd tesseract
     - ./autogen.sh
-    - export LIBLEPT_HEADERSDIR=/usr/local/include ./configure --with-extra-libraries=/usr/local/lib
+    - export LIBLEPT_HEADERSDIR=/usr/local/include 
+    - ./configure --with-extra-libraries=/usr/local/lib
     - sudo make && sudo make install
     - sudo ldconfig
     - cd ..
