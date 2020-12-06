@@ -115,7 +115,8 @@ script:
     - cd tesseract
   #- mkdir build
   #- cd build
-    - cmake .
+    - cmake -H. -B_build  
+    #- cmake --build _build
     - make
     - sudo make install
     - sudo ldconfig
