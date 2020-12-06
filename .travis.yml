@@ -114,8 +114,8 @@ script:
     - git clone https://github.com/tesseract-ocr/tesseract.git
     - cd tesseract
     - ./autogen.sh
-    - autoreconf -i       
-    - ./configure
+    - export LIBLEPT_HEADERSDIR=/local/include
+    - ./configure --with-extra-libraries=/local/lib
     - sudo make && sudo make install
     - sudo ldconfig
     - cd ..
