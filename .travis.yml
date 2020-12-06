@@ -41,16 +41,16 @@ script:
   #  - gcc -v && g++ -v && cmake --version
   # Run your build commands next
 
-    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
-    - sudo apt-get update -qq
-    - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
-    - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+   # - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+   # - sudo apt-get update -qq
+   # - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
+   # - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 # #- pkg-config --cflags --libs tesseract
-    - sudo apt install qt5-default
+   # - sudo apt install qt5-default
     - sudo apt-get install libgtk2.0-dev -y
     - sudo apt-get install tree
    
-   #- sudo apt-get install autoconf automake libtool
+    - sudo apt-get install autoconf automake libtool
  #  - sudo apt-get install pkg-config
     - sudo apt-get install libpng-dev
     - sudo apt-get install libjpeg8-dev
