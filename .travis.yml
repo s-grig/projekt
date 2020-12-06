@@ -116,11 +116,11 @@ script:
   #- mkdir build
   #- cd build
     - cmake -H. -B_build  
-    #- cmake --build _build
-    - make
-    - sudo make install
-    - sudo ldconfig
-  #- cd ..
+    - cmake --build _build
+   # - make
+    #- sudo make install
+    #- sudo ldconfig
+    - cd ..
   ###- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
@@ -131,7 +131,7 @@ script:
   ###- sudo make install
   ###- make training
   ###- sudo make training-install
-    - cd ..
+   
   ##- cd ..
     - ls
 
