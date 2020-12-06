@@ -19,7 +19,7 @@ addons:
       - qt514imageformats
       - qt514tools
       - cmake-data
-      - clang-7.0
+     
   
 before_install:
      - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
