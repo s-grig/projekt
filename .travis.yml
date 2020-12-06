@@ -41,7 +41,7 @@ script:
     - gcc -v && g++ -v && cmake --version
   # Run your build commands next
 
-    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+   # - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
     - sudo apt-get update -qq
     - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev -y
     - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
@@ -111,15 +111,15 @@ script:
 
   ##- mkdir -p tesseract_s && cd tesseract_s
   ##- mkdir -p tesseract_s && cd tesseract_s
-    - git clone https://github.com/tesseract-ocr/tesseract.git
-    - cd tesseract
-    - mkdir build && cd build
-    - cmake ..
-    - make
-    - sudo make install
-    - sudo ldconfig
-    - cd ..
-    - cd ..
+    #- git clone https://github.com/tesseract-ocr/tesseract.git
+    #- cd tesseract
+   # - mkdir build && cd build
+   # - cmake ..
+   # - make
+   # - sudo make install
+   # - sudo ldconfig
+   # - cd ..
+   # - cd ..
   ###- ./autogen.sh
   #- export LIBLEPT_HEADERSDIR=/local/include
   #- ./configure --with-extra-libraries=/local/lib
@@ -140,6 +140,7 @@ script:
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
   #- export TESSDATA_PREFIX="/home/travis/build/s-grig/projekt/tesseract/tessdata" 
   
+    - sudo apt install tesseract-ocr 
     - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
     - find / -name  "*onfig.cmake" -print 2>/dev/null
