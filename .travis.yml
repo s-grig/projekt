@@ -19,7 +19,7 @@ addons:
       - qt514imageformats
       - qt514tools
       - cmake-data
-      - lepnonica 1.78
+      - leptonica
       - tesseract-ocr
       - sfml
      
