@@ -19,7 +19,7 @@ addons:
       - qt514imageformats
       - qt514tools
       - cmake-data
-      - tesseract-ocr411
+      #- tesseract-ocr
       
       
      
