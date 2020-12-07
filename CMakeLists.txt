@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
 
-#set(Tesseract_DIR "/home/travis/build/s-grig/projekt/tesseract/")
+set(Tesseract_DIR "/home/travis/build/s-grig/projekt/tesseract")
 
 #set(Leptonica_DIR "/usr/local/include")
 #set(Leptonica_DIR "/home/travis/build/s-grig/projekt/leptonica-1.80.0/")
@@ -51,6 +51,7 @@ find_package(Leptonica CONFIG REQUIRED)
 add_executable(main
 ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/source/ui.cpp)
+
 
 
 target_include_directories(main
