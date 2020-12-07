@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC ON)
 
-set(Tesseract_DIR "/usr/local/lib/cmake")
+#set(Tesseract_DIR "/usr/local/lib/cmake")
 
 #set(Leptonica_DIR "/usr/local/include")
 #set(Leptonica_DIR "/home/travis/build/s-grig/projekt/leptonica-1.80.0/")
@@ -28,7 +28,8 @@ project(projekt)
 # Include subdirectories
 
 #include("tools/gate/cmake/HunterGate.cmake")
-
+include_directories(/usr/include/tesseract/)
+include_directories(/usr/include/leptonica/)
 # Include directories
 ####include_directories(${Tesseract_INCLUDE_DIRS})
 
