@@ -102,8 +102,9 @@ script:
     #- cd ..
     #- ls
     - mkdir build && cd build
-    - cmake ..
-    - sudo make && sudo make install
+    - cmake ../
+    - cmake --build .
+    #- sudo make install
     - cd ..
     - cd ..
 
@@ -119,9 +120,9 @@ script:
    # - cd ..
 
     - mkdir build && cd build
-    - cmake ..
-    - sudo make
-    - sudo make install
+    - cmake ../
+    - cmake --build .
+    #- sudo make install
     - cd ..
     - cd ..
   
