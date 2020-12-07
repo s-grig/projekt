@@ -96,17 +96,17 @@ script:
     # tar xzvf
     - cd leptonica-1.80.0
   #- autoreconf --install --force
-    #- ./configure
+    - ./configure
+    - sudo make install
+    - sudo make check
+    - cd ..
+    - ls
+    #- mkdir build && cd build
+    #- cmake ../
+    #- cmake --build .
     #- sudo make install
-    #- sudo make check
     #- cd ..
-    #- ls
-    - mkdir build && cd build
-    - cmake ../
-    - cmake --build .
-    #- sudo make install
-    - cd ..
-    - cd ..
+    #- cd ..
 
   ################## tesseract build ######################################
   
