@@ -143,8 +143,11 @@ script:
     - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
     - find / -name  "*onfig.cmake" -print 2>/dev/null
-    - find  / -name "TesseractConfig*" -print 2>/dev/null
+    
     - find  / -name "LeptonicaConfig*" -print 2>/dev/null
+    - find  / -name "TesseractConfig*" -print 2>/dev/null
+    - find  / -name "libtesseract" -print 2>/dev/null
+    
   ##- tree
   ##- tree -P '*esseract*' --prune
   
