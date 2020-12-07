@@ -29,7 +29,7 @@ project(projekt)
 
 #include("tools/gate/cmake/HunterGate.cmake")
 #include_directories(/usr/include/tesseract/)
-include_directories(/usr/include/leptonica/)
+#include_directories(/usr/include/leptonica/)
 # Include directories
 include_directories(${Tesseract_INCLUDE_DIRS})
 
