@@ -91,26 +91,26 @@ script:
     - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
     - sudo make && sudo make install
     - cd ..
-    - ls
     - cd ..
     - ls
-    - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
-    - tar xzf leptonica-1.80.0.tar.gz
+   # - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
+   # - tar xzf leptonica-1.80.0.tar.gz
     # tar xzvf
-    - cd leptonica-1.80.0
+   # - cd leptonica-1.80.0
   #- autoreconf --install --force
-    - ./configure
-    - sudo make install
-    - sudo make check
-    - cd ..
-    - ls
-    #- mkdir build && cd build
-    #- cmake ../
-    #- cmake --build .
-    #- sudo make install
-    #- cd ..
-    #- cd ..
-
+   # - ./configure
+   # - sudo make install
+   # - sudo make check
+  #  - cd ..
+   # - ls
+   ################## tesseract + leptonica #####################################https://github.com/nijel/tesseract-ocr-build
+    - export TESSERACT_VERSION=4.1.0-1
+    - export TESSERACT_INSTALL=$HOME/.tesseract
+    - export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
+    - export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
+    - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
+    - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME -xJf -
+    - tesseract --version
   ################## tesseract build ######################################
   
    # - git clone https://github.com/tesseract-ocr/tesseract.git
