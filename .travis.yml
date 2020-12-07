@@ -102,13 +102,13 @@ script:
     #- cd ..
     #- ls
     - mkdir build && cd build
-    - cmake ../
+    - cmake ..
     - sudo make && sudo make install
     - cd ..
     - cd ..
 
+  ################## tesseract build ######################################
   
-  ##- mkdir -p tesseract_s && cd tesseract_s
     - git clone https://github.com/tesseract-ocr/tesseract.git
     - cd tesseract
     #- ./autogen.sh
@@ -119,7 +119,7 @@ script:
    # - cd ..
 
     - mkdir build && cd build
-    - cmake ../
+    - cmake ..
     - sudo make
     - sudo make install
     - cd ..
@@ -141,7 +141,6 @@ script:
     - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
     - find / -name  "*onfig.cmake" -print 2>/dev/null
-    
     - find  / -name "LeptonicaConfig*" -print 2>/dev/null
     - find  / -name "TesseractConfig*" -print 2>/dev/null
     - find  / -name "libtesseract" -print 2>/dev/null
