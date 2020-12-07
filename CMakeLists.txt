@@ -30,9 +30,9 @@ project(projekt)
 #include("tools/gate/cmake/HunterGate.cmake")
 
 # Include directories
-include_directories(${Tesseract_INCLUDE_DIRS})
+####include_directories(${Tesseract_INCLUDE_DIRS})
 
-include_directories(${LEPTONICA_INCLUDE_DIRS})
+####include_directories(${LEPTONICA_INCLUDE_DIRS})
 # Check if libraries exist
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
