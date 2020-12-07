@@ -28,7 +28,7 @@ project(projekt)
 # Include subdirectories
 
 #include("tools/gate/cmake/HunterGate.cmake")
-include_directories(/usr/include/tesseract/)
+#include_directories(/usr/include/tesseract/)
 include_directories(/usr/include/leptonica/)
 # Include directories
 include_directories(${Tesseract_INCLUDE_DIRS})
@@ -61,7 +61,7 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 #set_target_properties(main PROPERTIES AUTOMOC TRUE)
 
 target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
-target_link_libraries(main PRIVATE libtesseract)
+target_link_libraries(main PRIVATE  ${Tesseract_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
 target_link_libraries(main PRIVATE ${Qt5Widgets_LIBRARIES})
 target_link_libraries(main PRIVATE ${Leptonica_LIBRARIES})
