@@ -96,37 +96,35 @@ script:
     # tar xzvf
     - cd leptonica-1.80.0
   #- autoreconf --install --force
-    - ./configure
-    - sudo make install
-    - sudo make check
+    #- ./configure
+    #- sudo make install
+    #- sudo make check
+    #- cd ..
+    #- ls
+    - mkdir build && cd build
+    - cmake ../
+    - sudo make && sudo make install
     - cd ..
-    - ls
-    
+    - cd ..
+
   
   ##- mkdir -p tesseract_s && cd tesseract_s
     - git clone https://github.com/tesseract-ocr/tesseract.git
     - cd tesseract
-    - ./autogen.sh
-    - export LIBLEPT_HEADERSDIR=/usr/local/include 
-    - ./configure --with-extra-libraries=/usr/local/lib
-    - sudo make && sudo make install
-    - sudo ldconfig
-    - cd ..
+    #- ./autogen.sh
+   # - export LIBLEPT_HEADERSDIR=/usr/local/include 
+   # - ./configure --with-extra-libraries=/usr/local/lib
+   # - sudo make && sudo make install
+   # - sudo ldconfig
+   # - cd ..
 
-    #- mkdir build && cd build
-    #- cmake ../
-    #- sudo make
-    #- sudo make install
-    #- cd ..
-    #- cd ..
-  ###- ./autogen.sh
-  #- export LIBLEPT_HEADERSDIR=/local/include
-  #- ./configure --with-extra-libraries=/local/lib
-  #- LIBLEPT_HEADERSDIR=/usr/local/include ./configure --prefix=/usr/local/ --with-extra-libraries=/usr/local/lib
-  #- make install
-  ###- autoreconf --install --force
-  ###- ./configure
-  ###- sudo make install
+    - mkdir build && cd build
+    - cmake ../
+    - sudo make
+    - sudo make install
+    - cd ..
+    - cd ..
+  
   ###- make training
   ###- sudo make training-install
    
