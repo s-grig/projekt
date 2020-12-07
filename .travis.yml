@@ -19,8 +19,8 @@ addons:
       - qt514imageformats
       - qt514tools
       - cmake-data
-      - tesseract-ocr 4.1.1
-      - SFML-2.5.1
+      - tesseract-ocr411
+      
       
      
   
