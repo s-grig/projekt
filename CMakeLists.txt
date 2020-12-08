@@ -29,7 +29,7 @@ project(projekt)
 
 #include("tools/gate/cmake/HunterGate.cmake")
 #include_directories(/usr/include/tesseract/)
-include_directories(/usr/include/leptonica/)
+#include_directories(/usr/include/leptonica/)
 # Include directories
 include_directories(${Tesseract_INCLUDE_DIRS})
 
@@ -70,10 +70,10 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #set_target_properties(main PROPERTIES AUTOMOC TRUE)
 
-target_link_libraries(main PRIVATE sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
-target_link_libraries(main PRIVATE  ${Tesseract_LIBRARIES})
-target_link_libraries(main PRIVATE ${Qt5Gui_LIBRARIES})
-target_link_libraries(main PRIVATE ${Qt5Widgets_LIBRARIES})
-target_link_libraries(main PRIVATE ${Leptonica_LIBRARIES})
+target_link_libraries(main PUBLIC sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
+target_link_libraries(main PUBLIC  ${Tesseract_LIBRARIES})
+target_link_libraries(main PUBLIC ${Qt5Gui_LIBRARIES})
+target_link_libraries(main PUBLIC ${Qt5Widgets_LIBRARIES})
+target_link_libraries(main PUBLIC ${Leptonica_LIBRARIES})
 
-#target_link_libraries(main PRIVATE -llept -ltesseract) # must add this line to link Tesseract and leptonica libs
+#target_link_libraries(main PUBLIC -llept -ltesseract) # must add this line to link Tesseract and leptonica libs

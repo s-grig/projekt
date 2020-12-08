@@ -19,6 +19,9 @@ addons:
       - qt514imageformats
       - qt514tools
       - cmake-data
+     #- tesseract-ocr
+      
+      
      
   
 before_install:
@@ -27,6 +30,7 @@ before_install:
       brew install qt5 cmake ;
       brew link --force qt ;
        fi
+     - 
 
 script:
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
@@ -36,10 +40,13 @@ script:
       fi
     - cmake --version
     - qmake --version
-
+    - tesseract --version
+    - echo "$HOME"
   # Check versions of gcc, g++ and cmake
   #  - gcc -v && g++ -v && cmake --version
   # Run your build commands next
+    - echo $PATH
+    
 
    # - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
    # - sudo apt-get update -qq
@@ -49,7 +56,9 @@ script:
    # - sudo apt install qt5-default
     - sudo apt-get install libgtk2.0-dev -y
     - sudo apt-get install tree
-   
+
+    #- sudo apt update sudo apt install tesseract-ocr
+
     - sudo apt-get install autoconf automake libtool
  #  - sudo apt-get install pkg-config
     - sudo apt-get install libpng-dev
@@ -66,7 +75,7 @@ script:
 
 
 
- 
+    - export TESSERACT_INSTALL=$HOME/build/s-grig/projekt/tesseract
   #- export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
   #- export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
   #- export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
@@ -88,60 +97,58 @@ script:
     - cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON -DARCHIVE_INSTALL_DIR=. -G "Unix Makefiles"
     - sudo make && sudo make install
     - cd ..
-    - ls
     - cd ..
     - ls
-    - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
-    - tar xzf leptonica-1.80.0.tar.gz
+   # - wget https://github.com/DanBloomberg/leptonica/releases/download/1.80.0/leptonica-1.80.0.tar.gz
+   # - tar xzf leptonica-1.80.0.tar.gz
     # tar xzvf
-    - cd leptonica-1.80.0
+   # - cd leptonica-1.80.0
   #- autoreconf --install --force
-    #- ./configure
-    #- sudo make install
-    #- sudo make check
-    #- cd ..
-    #- ls
-    - mkdir build && cd build
-    - cmake ../
-    - sudo make && sudo make install
-    - cd ..
-    - cd ..
-
+   # - ./configure
+   # - sudo make install
+   # - sudo make check
+  #  - cd ..
+   # - ls
+   ################## tesseract + leptonica #####################################https://github.com/nijel/tesseract-ocr-build
+    - export TESSERACT_VERSION=4.1.0-1
+    - export TESSERACT_INSTALL=$HOME/build/s-grig/projekt/tesseract
+    - export TESSERACT_PKG=$TESSERACT_INSTALL/lib/pkgconfig
+    - export LD_LIBRARY_PATH=$TESSERACT_INSTALL/lib:$LD_LIBRARY_PATH
+    - export PKG_CONFIG_PATH=$TESSERACT_PKG:$PKG_CONFIG_PATH
+    - wget -O - https://github.com/nijel/tesseract-ocr-build/releases/download/$TESSERACT_VERSION/tesseract.tar.xz | tar -C $HOME/build/s-grig/projekt -xJf -
+    - tesseract --version
+  ################## tesseract build ######################################
   
-  ##- mkdir -p tesseract_s && cd tesseract_s
-    - git clone https://github.com/tesseract-ocr/tesseract.git
-    - cd tesseract
-    #- ./autogen.sh
+   # - git clone https://github.com/tesseract-ocr/tesseract.git
+   ## #- cd tesseract
+   ## #- ./autogen.sh
    # - export LIBLEPT_HEADERSDIR=/usr/local/include 
    # - ./configure --with-extra-libraries=/usr/local/lib
    # - sudo make && sudo make install
    # - sudo ldconfig
    # - cd ..
 
-    - mkdir build && cd build
-    - cmake ../
-    - sudo make
-    - sudo make install
-    - cd ..
-    - cd ..
+   ### - mkdir build && cd build
+   ### - cmake ../
+   ### - cmake --build .
+    #- sudo make install
+   ### - cd ..
+   ###- cd ..
   
   ###- make training
   ###- sudo make training-install
    
   ##- 
     - ls
-
-  
+     
   #  - export TESSDATA_PREFIX=/home/travis/build/s-grig/projekt/tesseract/
   #- export TESSDATA_PREFIX=/usr/local/share/    #/usr/local/share/tessdata
   #- export Tesseract_DIR=/home/travis/build/s-grig/projekt/
   #- export TESSDATA_PREFIX="/home/travis/build/s-grig/projekt/tesseract/tessdata" 
-  
-   # - pkg-config --cflags --libs tesseract 
+     # - pkg-config --cflags --libs tesseract 
     - tesseract --version
   #  "-DCMAKE_PREFIX_PATH=/home/travis/build/s-grig/projekt/tesseract/cmake/"
     - find / -name  "*onfig.cmake" -print 2>/dev/null
-    
     - find  / -name "LeptonicaConfig*" -print 2>/dev/null
     - find  / -name "TesseractConfig*" -print 2>/dev/null
     - find  / -name "libtesseract" -print 2>/dev/null
