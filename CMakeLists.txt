@@ -20,7 +20,7 @@ set(CMAKE_AUTOMOC ON)
 #  URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
 #  SHA1 "e14bc153a7f16d6a5eeec845fb0283c8fad8c358"  
 #)
-
+ set(Tesseract_LIBRARIES libtesseract)
 
 project(projekt)
 
@@ -34,6 +34,10 @@ include_directories(/usr/include/leptonica/)
 include_directories(${Tesseract_INCLUDE_DIRS})
 
 include_directories(${LEPTONICA_INCLUDE_DIRS})
+
+### 08-12-200
+#include(${CMAKE_CURRENT_LIST_DIR} /tesseract/TesseractTargets.cmake)
+
 # Check if libraries exist
 
 find_package(SFML REQUIRED COMPONENTS system window graphics network audio)
@@ -46,7 +50,13 @@ find_package(Qt5Widgets CONFIG REQUIRED)
 
 find_package(Leptonica CONFIG REQUIRED)
 
-
+# 08-12-2020
+#target_link_libraries(main Tesseract::libtesseract)
+#
+#
+#@PACKAGE_INIT@
+#set_and_check(Tesseract_INCLUDE_DIR "@PACKAGE_INCLUDE_DIR@")
+check_required_components(Tesseract)
 # The main program
 
 add_executable(main
