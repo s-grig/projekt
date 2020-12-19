@@ -2,4 +2,4 @@
 [![Build Status](https://travis-ci.com/s-grig/projekt.svg?branch=master)](https://travis-ci.com/s-grig/projekt)
 Test tesseract
 
-# KP
+# projekt
